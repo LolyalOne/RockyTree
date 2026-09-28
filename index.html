@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rocky Tree Technologies | Apresentação Institucional</title>
-    <meta name="description" content="Rocky Tree Technologies - Do hardware à nuvem. Infraestrutura de redes, desenvolvimento web em Dark UI e design inteligente com base sólida.">
+    <title>Rocky Tree Technologies | Manutenção em SAJ, Infraestrutura & Sites</title>
+    <meta name="description" content="Rocky Tree Technologies - Manutenção especializada em Santo Antônio de Jesus (SAJ), infraestrutura corporativa de redes e criação de sites modernos para empresas.">
     <link rel="icon" type="image/x-icon" href="RockyTreeLogoNeo.ico">
     <link rel="icon" type="image/png" href="RockyTreeLogoNeo.png">
     
@@ -42,11 +42,11 @@
                             dim: 'rgba(204, 255, 0, 0.1)',
                         },
                         dark: {
-                            950: '#06080c',
-                            900: '#0b0f17',
-                            850: '#111622',
-                            800: '#182030',
-                            700: '#232d42',
+                            950: '#070a10',
+                            900: '#0c101a',
+                            850: '#131926',
+                            800: '#1b2336',
+                            700: '#26314a',
                         }
                     }
                 }
@@ -58,32 +58,73 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <style>
-        /* Tech Minimalist Base */
+        /* Tech Modern Base */
         body {
-            background-color: #06080c;
+            background-color: #070a10;
             color: #e2e8f0;
             overflow-x: hidden;
             font-family: 'Inter', sans-serif;
         }
 
-        /* Glassmorphism Dark UI */
+        /* Glassmorphism Header */
         .glass-header {
-            background: rgba(6, 8, 12, 0.85);
+            background: rgba(7, 10, 16, 0.88);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         }
 
+        /* Interactive Tech Grid with Spotlight */
+        .tech-grid-bg {
+            background-color: #070a10;
+            background-image: 
+                radial-gradient(circle at var(--spotlight-x, 50%) var(--spotlight-y, 35%), rgba(204, 255, 0, 0.08), transparent 45%),
+                linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+            background-size: 100% 100%, 48px 48px, 48px 48px;
+        }
+
+        /* Ambient Glow Orbs */
+        .glow-orb-1 {
+            position: absolute;
+            width: 480px;
+            height: 480px;
+            background: radial-gradient(circle, rgba(204, 255, 0, 0.09) 0%, transparent 70%);
+            filter: blur(65px);
+            pointer-events: none;
+            z-index: 1;
+            animation: floatOrb 12s ease-in-out infinite alternate;
+        }
+
+        .glow-orb-2 {
+            position: absolute;
+            width: 420px;
+            height: 420px;
+            background: radial-gradient(circle, rgba(16, 185, 129, 0.07) 0%, transparent 70%);
+            filter: blur(60px);
+            pointer-events: none;
+            z-index: 1;
+            animation: floatOrb 16s ease-in-out infinite alternate-reverse;
+        }
+
+        @keyframes floatOrb {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(35px, 25px); }
+        }
+
+        /* Interactive Magnetic Card Spotlight */
         .tech-card {
-            background: linear-gradient(180deg, #111622 0%, #0b0f17 100%);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(204, 255, 0, 0.08), transparent 40%),
+                        linear-gradient(180deg, #131926 0%, #0c101a 100%);
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .tech-card:hover {
-            border-color: rgba(204, 255, 0, 0.4);
-            box-shadow: 0 10px 30px -10px rgba(204, 255, 0, 0.15);
-            transform: translateY(-3px);
+            border-color: rgba(204, 255, 0, 0.45);
+            box-shadow: 0 16px 40px -12px rgba(204, 255, 0, 0.18);
+            transform: translateY(-4px);
         }
 
         /* High-Contrast Neon Accents */
@@ -97,16 +138,22 @@
 
         .btn-neon-solid {
             background-color: #ccff00;
-            color: #06080c;
+            color: #070a10;
             font-weight: 700;
             box-shadow: 0 0 18px rgba(204, 255, 0, 0.28);
-            transition: all 0.25s ease;
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
         }
 
         .btn-neon-solid:hover {
             background-color: #d8ff33;
-            box-shadow: 0 0 28px rgba(204, 255, 0, 0.6);
-            transform: translateY(-2px);
+            box-shadow: 0 0 32px rgba(204, 255, 0, 0.65);
+            transform: translateY(-2px) scale(1.02);
+        }
+
+        .btn-neon-solid:active {
+            transform: translateY(0) scale(0.98);
         }
 
         .btn-neon-outline {
@@ -115,48 +162,145 @@
             background: transparent;
             font-weight: 600;
             transition: all 0.25s ease;
+            position: relative;
+            overflow: hidden;
         }
 
         .btn-neon-outline:hover {
             background: rgba(204, 255, 0, 0.12);
-            box-shadow: 0 0 20px rgba(204, 255, 0, 0.3);
+            box-shadow: 0 0 22px rgba(204, 255, 0, 0.35);
             color: #ffffff;
             transform: translateY(-2px);
+        }
+
+        /* Button Click Ripple Effect */
+        .btn-ripple {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.35);
+            transform: scale(0);
+            animation: rippleEffect 0.6s linear;
+            pointer-events: none;
+        }
+
+        @keyframes rippleEffect {
+            to {
+                transform: scale(1);
+                opacity: 0;
+            }
+        }
+
+        /* Interactive Tag Hover */
+        .service-tag {
+            transition: all 0.2s ease;
+        }
+
+        .service-tag:hover {
+            border-color: rgba(204, 255, 0, 0.5);
+            background: rgba(204, 255, 0, 0.12);
+            color: #ccff00;
+            transform: translateY(-1px);
+        }
+
+        /* Smooth Infinite Marquee Ticker */
+        .marquee-container {
+            overflow: hidden;
+            display: flex;
+            user-select: none;
+            gap: 2rem;
+            mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+        }
+
+        .marquee-content {
+            flex-shrink: 0;
+            display: flex;
+            justify-content: space-around;
+            min-width: 100%;
+            gap: 2.5rem;
+            animation: marqueeScroll 34s linear infinite;
+        }
+
+        .marquee-container:hover .marquee-content {
+            animation-play-state: paused;
+        }
+
+        @keyframes marqueeScroll {
+            from { transform: translateX(0); }
+            to { transform: translateX(calc(-100% - 2.5rem)); }
         }
 
         /* Subtle glowing divider */
         .neon-divider {
             height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(204, 255, 0, 0.4), transparent);
+            background: linear-gradient(90deg, transparent, rgba(204, 255, 0, 0.35), transparent);
         }
 
-        /* Typing Effect */
-        .typing-container {
-            display: inline-block;
+        /* Interactive Simulator Checklist Cards */
+        .sim-option {
+            cursor: pointer;
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        
-        .cursor {
-            display: inline-block;
-            width: 3px;
+
+        .sim-option.selected {
+            border-color: #ccff00;
+            background: rgba(204, 255, 0, 0.08);
+            box-shadow: 0 0 24px rgba(204, 255, 0, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .sim-option.selected .sim-checkbox-circle {
             background-color: #ccff00;
-            margin-left: 4px;
-            animation: blink 1s step-end infinite;
+            border-color: #ccff00;
+            color: #070a10;
         }
 
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
+        /* Interactive Portfolio Tabs */
+        .portfolio-tab {
+            transition: all 0.25s ease;
         }
 
-        /* Particles container */
-        #particles-js {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: 0;
-            pointer-events: none;
+        .portfolio-tab.active {
+            background-color: #ccff00;
+            color: #070a10;
+            border-color: #ccff00;
+            font-weight: 700;
+            box-shadow: 0 0 16px rgba(204, 255, 0, 0.3);
+        }
+
+        .portfolio-card {
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .portfolio-card.portfolio-hidden {
+            display: none !important;
+        }
+
+        /* Interactive FAQ Accordion */
+        .faq-item {
+            transition: all 0.25s ease;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease;
+            opacity: 0;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 280px;
+            opacity: 1;
+        }
+
+        .faq-item.active {
+            border-color: rgba(204, 255, 0, 0.4);
+            background: rgba(19, 25, 38, 0.95);
+        }
+
+        .faq-item.active .faq-chevron {
+            transform: rotate(180deg);
+            color: #ccff00;
         }
 
         /* Modal Styles */
@@ -184,10 +328,10 @@
             width: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: #06080c;
+            background: #070a10;
         }
         ::-webkit-scrollbar-thumb {
-            background: #182030;
+            background: #1b2336;
             border-radius: 4px;
             border: 1px solid rgba(255, 255, 255, 0.05);
         }
@@ -196,7 +340,7 @@
         }
     </style>
 </head>
-<body class="antialiased selection:bg-[#ccff00] selection:text-[#06080c]">
+<body class="antialiased selection:bg-[#ccff00] selection:text-[#070a10]">
 
     <!-- ========================================================================= -->
     <!-- HEADER / MENU ONE PAGE                                                    -->
@@ -205,8 +349,8 @@
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <!-- Brand Logo -->
             <a href="#" class="flex items-center gap-3.5 group">
-                <div class="w-11 h-11 rounded-xl overflow-hidden flex items-center justify-center bg-[#111622] border border-white/10 group-hover:border-[#ccff00] transition-all duration-300">
-                    <img src="RockyTreeLogoNeo.png" onerror="this.src='https://ui-avatars.com/api/?name=RT&background=06080c&color=ccff00&font-size=0.4&bold=true'" alt="Rocky Tree Technologies Logo" class="w-8 h-8 object-contain">
+                <div class="w-11 h-11 rounded-xl overflow-hidden flex items-center justify-center bg-[#131926] border border-white/10 group-hover:border-[#ccff00] transition-all duration-300">
+                    <img src="RockyTreeLogoNeo.png" onerror="this.src='https://ui-avatars.com/api/?name=RT&background=070a10&color=ccff00&font-size=0.4&bold=true'" alt="Rocky Tree Technologies Logo" class="w-8 h-8 object-contain">
                 </div>
                 <div class="flex flex-col">
                     <span class="font-display font-bold text-lg tracking-tight text-white group-hover:text-[#ccff00] transition-colors duration-300">
@@ -219,36 +363,44 @@
             </a>
 
             <!-- One Page Nav (Scroll Contínuo) -->
-            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
+            <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-gray-300">
                 <a href="#sobre" class="hover:text-[#ccff00] transition-colors">Sobre Nós</a>
                 <a href="#servicos" class="hover:text-[#ccff00] transition-colors">Serviços</a>
-                <a href="#portfolio" class="hover:text-[#ccff00] transition-colors flex items-center gap-1.5">
-                    Portfólio
+                <a href="#simulador" class="hover:text-[#ccff00] transition-colors flex items-center gap-1.5">
+                    Simulador
                     <span class="w-1.5 h-1.5 rounded-full bg-[#ccff00] animate-pulse"></span>
                 </a>
+                <a href="#portfolio" class="hover:text-[#ccff00] transition-colors">Portfólio</a>
                 <a href="#planos" class="hover:text-[#ccff00] transition-colors">Planos</a>
+                <a href="#duvidas" class="hover:text-[#ccff00] transition-colors">Dúvidas</a>
                 <a href="#contato" class="hover:text-[#ccff00] transition-colors">Contato</a>
             </nav>
 
-            <!-- High-Contrast Action CTA -->
-            <div class="hidden md:flex items-center gap-4">
+            <!-- Header Action Pill & CTA -->
+            <div class="hidden sm:flex items-center gap-4">
+                <div class="hidden xl:flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] border border-white/10 text-xs text-gray-300">
+                    <span class="w-2 h-2 rounded-full bg-[#ccff00] animate-pulse shadow-[0_0_8px_#ccff00]"></span>
+                    <span>SAJ • Técnicos Disponíveis</span>
+                </div>
                 <a href="#contato" class="px-5 py-2.5 text-xs uppercase tracking-wider font-bold btn-neon-solid rounded-lg">
                     Solicitar Orçamento
                 </a>
             </div>
 
             <!-- Mobile Hamburger Button -->
-            <button class="md:hidden text-gray-300 hover:text-white p-2 rounded-lg bg-white/5 border border-white/10" id="mobile-menu-btn" aria-label="Abrir Menu">
+            <button class="lg:hidden text-gray-300 hover:text-white p-2 rounded-lg bg-white/5 border border-white/10" id="mobile-menu-btn" aria-label="Abrir Menu">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"></path></svg>
             </button>
         </div>
 
         <!-- Mobile Navigation Drawer -->
-        <div id="mobile-menu" class="hidden md:hidden bg-[#0b0f17] border-b border-white/10 px-6 py-6 space-y-4">
+        <div id="mobile-menu" class="hidden lg:hidden bg-[#0c101a] border-b border-white/10 px-6 py-6 space-y-4">
             <a href="#sobre" onclick="closeMobileMenu()" class="block text-gray-300 hover:text-[#ccff00] font-medium py-1">Sobre Nós</a>
             <a href="#servicos" onclick="closeMobileMenu()" class="block text-gray-300 hover:text-[#ccff00] font-medium py-1">Serviços</a>
+            <a href="#simulador" onclick="closeMobileMenu()" class="block text-gray-300 hover:text-[#ccff00] font-medium py-1">Simulador de Serviços</a>
             <a href="#portfolio" onclick="closeMobileMenu()" class="block text-gray-300 hover:text-[#ccff00] font-medium py-1">Portfólio</a>
             <a href="#planos" onclick="closeMobileMenu()" class="block text-gray-300 hover:text-[#ccff00] font-medium py-1">Planos</a>
+            <a href="#duvidas" onclick="closeMobileMenu()" class="block text-gray-300 hover:text-[#ccff00] font-medium py-1">Dúvidas Frequentes</a>
             <a href="#contato" onclick="closeMobileMenu()" class="block text-gray-300 hover:text-[#ccff00] font-medium py-1">Contato</a>
             <a href="#contato" onclick="closeMobileMenu()" class="block text-center w-full py-3 btn-neon-solid rounded-lg text-xs uppercase tracking-wider font-bold mt-2">
                 Solicitar Orçamento
@@ -257,125 +409,137 @@
     </header>
 
     <!-- ========================================================================= -->
-    <!-- HERO SECTION (Apresentação Digital & Conversão)                           -->
+    <!-- HERO SECTION (Minimalista, Alto Impacto & Slogan Direto)                   -->
     <!-- ========================================================================= -->
-    <section class="relative min-h-screen flex items-center justify-center pt-28 pb-20 overflow-hidden">
-        <!-- Interactive Background Particles -->
-        <div id="particles-js"></div>
-        
-        <!-- Subtle Tech Radial Glow -->
-        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(204,255,0,0.06)_0%,_rgba(6,8,12,0.85)_55%,_#06080c_100%)] pointer-events-none"></div>
+    <section class="relative min-h-[92vh] flex items-center justify-center pt-32 pb-24 overflow-hidden tech-grid-bg">
+        <!-- Interactive Ambient Light Orbs -->
+        <div class="glow-orb-1 top-1/4 left-1/4"></div>
+        <div class="glow-orb-2 bottom-1/4 right-1/4"></div>
 
         <div class="relative z-10 max-w-5xl mx-auto px-6 text-center">
-            <!-- Tech Badge -->
-            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#ccff00]/30 bg-[#ccff00]/10 text-[#ccff00] text-xs font-semibold uppercase tracking-wider mb-8 backdrop-blur-md" data-aos="fade-down">
-                <span class="w-2 h-2 rounded-full bg-[#ccff00] animate-pulse"></span>
-                Site Institucional • Do Hardware à Nuvem
-            </div>
             
-            <!-- Main Title with Typing Effect -->
-            <h1 class="font-display text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white mb-6 leading-[1.1]">
-                <span class="typing-container">
-                    <span id="typed-text" class="text-white"></span><span class="cursor">&nbsp;</span>
-                </span>
+            <!-- Main Title (Sólido, Imediato e sem Deletar) -->
+            <h1 class="font-display text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white mb-6 leading-[1.1]" data-aos="fade-up">
+                Soluções Sólidas em <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#ccff00] via-[#e2ff4f] to-[#a3e635]">Tecnologia</span>.
             </h1>
             
-            <p class="text-base sm:text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mb-10 font-light leading-relaxed" data-aos="fade-up" data-aos-delay="200">
-                Apresentação oficial da <span class="text-white font-medium">Rocky Tree Technologies</span>. Desenvolvemos soluções completas e inabaláveis: infraestrutura corporativa, plataformas web de alta velocidade e design de identidade para empresas que exigem segurança e performance.
+            <!-- Minimalist & Beautiful Slogan (Sem Redundância) -->
+            <p class="text-base sm:text-xl text-gray-300 max-w-2xl mx-auto mb-10 font-normal leading-relaxed" data-aos="fade-up" data-aos-delay="150">
+                Manutenção especializada em Santo Antônio de Jesus, infraestrutura sólida de redes e sites modernos sob medida para impulsionar o seu negócio.
             </p>
             
-            <!-- Dual Conversion Action Buttons -->
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16" data-aos="zoom-in" data-aos-delay="300">
-                <a href="#portfolio" class="w-full sm:w-auto px-8 py-4 font-bold text-sm uppercase tracking-wider btn-neon-solid rounded-xl text-center flex items-center justify-center gap-2">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
-                    Ver Portfólio
-                </a>
-                <a href="#contato" class="w-full sm:w-auto px-8 py-4 font-semibold text-sm uppercase tracking-wider btn-neon-outline rounded-xl text-center backdrop-blur-sm flex items-center justify-center gap-2">
+            <!-- Action Buttons -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16" data-aos="fade-up" data-aos-delay="250">
+                <a href="#contato" class="w-full sm:w-auto px-8 py-4 font-bold text-sm uppercase tracking-wider btn-neon-solid rounded-xl text-center flex items-center justify-center gap-2">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
                     Solicitar Orçamento
                 </a>
+                <a href="#servicos" class="w-full sm:w-auto px-8 py-4 font-semibold text-sm uppercase tracking-wider btn-neon-outline rounded-xl text-center backdrop-blur-sm flex items-center justify-center gap-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                    Conhecer Serviços
+                </a>
             </div>
 
-            <!-- Tech Minimalist Metrics Grid -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto border-t border-white/10 pt-8" data-aos="fade-up" data-aos-delay="400">
+            <!-- Tech Minimalist Metrics Grid (Acessível e Humano) -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto border-t border-white/10 pt-8" data-aos="fade-up" data-aos-delay="350">
                 <div class="p-3 text-left">
                     <div class="text-2xl font-display font-bold text-white mb-1 flex items-center gap-1.5">
-                        <span class="text-[#ccff00]">100%</span>
+                        <span class="text-[#ccff00] counter" data-target="100" data-suffix="%">100%</span>
                     </div>
-                    <p class="text-xs text-gray-400">Visão sistêmica: do hardware à nuvem.</p>
+                    <p class="text-xs text-gray-400">Estabilidade: soluções definitivas sem retrabalho.</p>
                 </div>
                 <div class="p-3 text-left border-l border-white/5">
                     <div class="text-2xl font-display font-bold text-white mb-1">
-                        SAJ & Remoto
+                        Foco em SAJ
                     </div>
-                    <p class="text-xs text-gray-400">Atendimento presencial e todo o Brasil.</p>
+                    <p class="text-xs text-gray-400">Atendimento presencial e manutenção especializada em Santo Antônio de Jesus.</p>
                 </div>
                 <div class="p-3 text-left border-l border-white/5">
                     <div class="text-2xl font-display font-bold text-[#ccff00] mb-1">
-                        Full-Stack
+                        Suporte Ágil
                     </div>
-                    <p class="text-xs text-gray-400">Web, Infraestrutura, Redes & Design.</p>
+                    <p class="text-xs text-gray-400">Atendimento remoto prioritário para empresas em todo o Brasil.</p>
                 </div>
                 <div class="p-3 text-left border-l border-white/5">
                     <div class="text-2xl font-display font-bold text-white mb-1">
-                        Dark UI
+                        Sob Medida
                     </div>
-                    <p class="text-xs text-gray-400">Estética moderna e alta conversão.</p>
+                    <p class="text-xs text-gray-400">Sites e redes dimensionados para o objetivo da sua empresa.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <div class="neon-divider"></div>
+    <!-- ========================================================================= -->
+    <!-- INTERACTIVE TICKER / MARQUEE                                             -->
+    <!-- ========================================================================= -->
+    <div class="py-3.5 bg-[#090d16] border-y border-white/5 overflow-hidden">
+        <div class="marquee-container">
+            <div class="marquee-content text-xs font-mono tracking-widest text-gray-400 uppercase flex items-center">
+                <span class="flex items-center gap-2"><span class="text-[#ccff00]">✦</span> Manutenção Técnica Presencial em Santo Antônio de Jesus (SAJ)</span>
+                <span class="flex items-center gap-2"><span class="text-[#ccff00]">✦</span> Infraestrutura & Cabeamento Estruturado para Empresas</span>
+                <span class="flex items-center gap-2"><span class="text-[#ccff00]">✦</span> Sites para Empresas com Botão WhatsApp</span>
+                <span class="flex items-center gap-2"><span class="text-[#ccff00]">✦</span> Suporte Remoto Ágil em Todo o Brasil</span>
+                <span class="flex items-center gap-2"><span class="text-[#ccff00]">✦</span> Conserto de Computadores & Notebooks</span>
+                <span class="flex items-center gap-2"><span class="text-[#ccff00]">✦</span> Diagnóstico em Bancada & Reparo de Placas</span>
+                <span class="flex items-center gap-2"><span class="text-[#ccff00]">✦</span> Criação de Logotipos & Identidade Visual</span>
+            </div>
+            <div class="marquee-content text-xs font-mono tracking-widest text-gray-400 uppercase flex items-center" aria-hidden="true">
+                <span class="flex items-center gap-2"><span class="text-[#ccff00]">✦</span> Manutenção Técnica Presencial em Santo Antônio de Jesus (SAJ)</span>
+                <span class="flex items-center gap-2"><span class="text-[#ccff00]">✦</span> Infraestrutura & Cabeamento Estruturado para Empresas</span>
+                <span class="flex items-center gap-2"><span class="text-[#ccff00]">✦</span> Sites para Empresas com Botão WhatsApp</span>
+                <span class="flex items-center gap-2"><span class="text-[#ccff00]">✦</span> Suporte Remoto Ágil em Todo o Brasil</span>
+                <span class="flex items-center gap-2"><span class="text-[#ccff00]">✦</span> Conserto de Computadores & Notebooks</span>
+                <span class="flex items-center gap-2"><span class="text-[#ccff00]">✦</span> Diagnóstico em Bancada & Reparo de Placas</span>
+                <span class="flex items-center gap-2"><span class="text-[#ccff00]">✦</span> Criação de Logotipos & Identidade Visual</span>
+            </div>
+        </div>
+    </div>
 
     <!-- ========================================================================= -->
-    <!-- SOBRE NÓS (Apresentação Digital da Marca & Fundadores)                     -->
+    <!-- SOBRE NÓS (Corpo Técnico Especializado & Atendimento)                     -->
     <!-- ========================================================================= -->
-    <section id="sobre" class="py-24 relative bg-[#0b0f17]/40">
+    <section id="sobre" class="py-24 relative bg-[#0c101a]/50">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid lg:grid-cols-12 gap-12 items-center">
                 
-                <!-- Left Column: Terminal / Interactive Tech Card -->
+                <!-- Left Column: Authentic Technical Division Showcase -->
                 <div class="lg:col-span-5 relative" data-aos="fade-right">
-                    <div class="tech-card rounded-2xl p-6 relative overflow-hidden" data-tilt data-tilt-max="4" data-tilt-speed="400">
+                    <div class="tech-card rounded-2xl p-6 sm:p-7 relative overflow-hidden">
                         <div class="flex items-center justify-between pb-4 border-b border-white/10 mb-6">
-                            <div class="flex items-center gap-2">
-                                <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
-                                <span class="w-3 h-3 rounded-full bg-yellow-500/80"></span>
-                                <span class="w-3 h-3 rounded-full bg-[#ccff00]/80"></span>
-                            </div>
-                            <span class="text-[11px] font-mono text-gray-400">rockytree-core.sys</span>
+                            <span class="text-xs font-mono text-gray-400 uppercase tracking-wider">Estrutura Operacional</span>
+                            <span class="text-[11px] font-mono text-[#ccff00] bg-[#ccff00]/10 px-2.5 py-0.5 rounded border border-[#ccff00]/20">Técnicos Especializados</span>
                         </div>
 
-                        <!-- Technical Founders Block -->
+                        <!-- Technical Pillars Block -->
                         <div class="space-y-4">
-                            <div class="bg-[#06080c]/80 border border-white/10 rounded-xl p-4">
+                            <div class="bg-[#070a10]/80 border border-white/10 rounded-xl p-4 transition-all hover:border-[#ccff00]/40">
                                 <div class="flex items-center gap-3">
-                                    <div class="w-10 h-10 rounded-lg bg-[#ccff00]/10 border border-[#ccff00]/30 flex items-center justify-center text-[#ccff00]">
+                                    <div class="w-10 h-10 rounded-lg bg-[#ccff00]/10 border border-[#ccff00]/30 flex items-center justify-center text-[#ccff00] flex-shrink-0">
                                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
                                     </div>
                                     <div>
-                                        <h4 class="font-display font-bold text-white text-sm">Ana Peixoto</h4>
-                                        <p class="text-xs text-[#ccff00]">Especialista em Tecnologia & Redes</p>
+                                        <h4 class="font-display font-bold text-white text-sm">Divisão Presencial: SAJ</h4>
+                                        <p class="text-xs text-[#ccff00] font-medium">Foco Principal em Manutenção Técnica</p>
                                     </div>
                                 </div>
                                 <p class="text-xs text-gray-400 mt-2.5 leading-relaxed">
-                                    Gestão de topologias de rede, segurança da informação e governança tecnológica.
+                                    Bancada especializada em Santo Antônio de Jesus para diagnósticos precisos, conserto de computadores, troca de peças e suporte presencial imediato.
                                 </p>
                             </div>
 
-                            <div class="bg-[#06080c]/80 border border-white/10 rounded-xl p-4">
+                            <div class="bg-[#070a10]/80 border border-white/10 rounded-xl p-4 transition-all hover:border-[#ccff00]/40">
                                 <div class="flex items-center gap-3">
-                                    <div class="w-10 h-10 rounded-lg bg-[#ccff00]/10 border border-[#ccff00]/30 flex items-center justify-center text-[#ccff00]">
+                                    <div class="w-10 h-10 rounded-lg bg-[#ccff00]/10 border border-[#ccff00]/30 flex items-center justify-center text-[#ccff00] flex-shrink-0">
                                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
                                     </div>
                                     <div>
-                                        <h4 class="font-display font-bold text-white text-sm">Mikaell Rocha</h4>
-                                        <p class="text-xs text-[#ccff00]">Infraestrutura, Hardware & Dev</p>
+                                        <h4 class="font-display font-bold text-white text-sm">Divisão Digital & Redes</h4>
+                                        <p class="text-xs text-[#ccff00] font-medium">Sites & Suporte Remoto Nacional</p>
                                     </div>
                                 </div>
                                 <p class="text-xs text-gray-400 mt-2.5 leading-relaxed">
-                                    Engenharia de hardware, servidores, microsolda e desenvolvimento de sistemas modernos.
+                                    Criação de sites modernos para empresas, projetos de redes corporativas, Wi-Fi de alta estabilidade e suporte técnico remoto para todo o Brasil.
                                 </p>
                             </div>
                         </div>
@@ -384,42 +548,34 @@
                         <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between text-xs text-gray-400">
                             <span class="flex items-center gap-2">
                                 <span class="w-2 h-2 rounded-full bg-[#ccff00] animate-pulse"></span>
-                                Operação 100% Ativa
+                                Atendimento Ativo
                             </span>
-                            <span class="font-mono text-[11px] text-[#ccff00]">SAJ • BRASIL</span>
+                            <span class="font-mono text-[11px] text-[#ccff00]">FOCO SAJ • REMOTO BRASIL</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Right Column: Institutional Narrative -->
+                <!-- Coluna da Direita: Apresentação da Equipe Técnica Especializada -->
                 <div class="lg:col-span-7" data-aos="fade-left">
                     <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#ccff00]/10 text-[#ccff00] text-xs font-bold uppercase tracking-wider mb-4 border border-[#ccff00]/20">
-                        Apresentação da Marca
+                        Sobre a Rocky Tree
                     </div>
                     <h2 class="font-display text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">
-                        Apresentação Digital <br class="hidden sm:inline">da <span class="text-[#ccff00]">Rocky Tree</span>.
+                        Tecnologia com Base Sólida, <br class="hidden sm:inline">do <span class="text-[#ccff00]">Hardware ao Software</span>.
                     </h2>
                     <p class="text-gray-300 text-base md:text-lg mb-6 leading-relaxed font-light">
-                        A <strong class="text-white font-medium">Rocky Tree Technologies</strong> nasceu para preencher a lacuna entre o universo físico da TI e as camadas de software de ponta. Não entregamos apenas código nem apenas cabos: entregamos <strong class="text-[#ccff00]">infraestruturas sólidas como pedra e vivas como raízes</strong>.
+                        A <strong class="text-white font-medium">Rocky Tree Technologies</strong> nasceu para integrar com excelência o universo físico da informática aos serviços digitais de ponta. Não entregamos apenas computadores ou códigos: entregamos <strong class="text-[#ccff00]">soluções estáveis e duradouras para o seu negócio</strong>.
                     </p>
-                    <p class="text-gray-400 text-sm md:text-base mb-8 leading-relaxed">
-                        Fundada por Ana Peixoto e Mikaell Rocha em Santo Antônio de Jesus (BA), atendemos o mercado regional presencialmente e corporações de todo o país de forma 100% remota. Nosso diferencial é o domínio pleno de todas as camadas técnicas — do circuito impresso da placa-mãe ao servidor em nuvem e à interface em Dark UI que o cliente final interage.
+                    <p class="text-gray-400 text-sm md:text-base leading-relaxed mb-6">
+                        Com base em Santo Antônio de Jesus (BA), temos como <strong class="text-white">foco principal o atendimento presencial de manutenção e suporte técnico na região de SAJ</strong>, além de desenvolvimento de sites para empresas e suporte remoto para todo o país. Nossos técnicos especializados acompanham cada detalhe da sua infraestrutura com clareza, transparência e sem termos complicados.
                     </p>
-
-                    <!-- Feature Checkpoints -->
-                    <div class="grid sm:grid-cols-2 gap-4 pt-2 border-t border-white/10">
-                        <div class="flex items-start gap-3">
-                            <div class="w-5 h-5 rounded-full bg-[#ccff00]/10 flex items-center justify-center text-[#ccff00] mt-0.5 flex-shrink-0">
-                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
-                            </div>
-                            <span class="text-sm text-gray-300">Resolução definitiva sem terceirizações ou retrabalho.</span>
-                        </div>
-                        <div class="flex items-start gap-3">
-                            <div class="w-5 h-5 rounded-full bg-[#ccff00]/10 flex items-center justify-center text-[#ccff00] mt-0.5 flex-shrink-0">
-                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
-                            </div>
-                            <span class="text-sm text-gray-300">Design minimalista e interfaces de altíssima conversão.</span>
-                        </div>
+                    <div class="flex items-center gap-4 pt-4 border-t border-white/10">
+                        <a href="#contato" class="px-6 py-3 text-xs uppercase tracking-wider font-bold btn-neon-solid rounded-xl">
+                            Conversar com Nossos Técnicos
+                        </a>
+                        <a href="#simulador" class="px-6 py-3 text-xs uppercase tracking-wider font-semibold btn-neon-outline rounded-xl">
+                            Simular Atendimento
+                        </a>
                     </div>
                 </div>
 
@@ -430,7 +586,7 @@
     <div class="neon-divider"></div>
 
     <!-- ========================================================================= -->
-    <!-- ABA DE SERVIÇOS (Tech Minimalist Blocks)                                  -->
+    <!-- ABA DE SERVIÇOS (Linguagem Acessível, Sem Niche Jargon, 8 Tags por Card)  -->
     <!-- ========================================================================= -->
     <section id="servicos" class="py-24 relative">
         <div class="max-w-7xl mx-auto px-6">
@@ -442,7 +598,7 @@
                     Soluções Especializadas
                 </h2>
                 <p class="text-gray-400 max-w-2xl mx-auto text-sm md:text-base">
-                    Blocos visuais com linhas precisas, especificações claras e orçamentos pré-definidos para cada necessidade.
+                    Serviços práticos, linguagem clara e orçamentos transparentes desenhados para atender desde demandas pontuais até contratos contínuos.
                 </p>
             </div>
 
@@ -452,19 +608,24 @@
                 <!-- Serviço 1: Web -->
                 <div class="tech-card rounded-2xl p-7 flex flex-col justify-between group cursor-pointer" onclick="openServiceModal('web')" data-aos="fade-up" data-aos-delay="100">
                     <div>
-                        <div class="w-12 h-12 rounded-xl bg-[#06080c] border border-white/10 flex items-center justify-center text-[#ccff00] mb-6 group-hover:border-[#ccff00] group-hover:scale-110 transition-all">
+                        <div class="w-12 h-12 rounded-xl bg-[#070a10] border border-white/10 flex items-center justify-center text-[#ccff00] mb-6 group-hover:border-[#ccff00] group-hover:scale-110 transition-all">
                             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
                         </div>
                         <h3 class="font-display font-bold text-xl text-white mb-3 group-hover:text-[#ccff00] transition-colors">
                             Desenvolvimento Web
                         </h3>
                         <p class="text-gray-400 text-xs leading-relaxed mb-6">
-                            Landing Pages One Page de alta conversão, Sites Institucionais modernos e portais em Dark UI com foco em velocidade.
+                            Páginas de apresentação rápida, sites completos para empresas e portais sob medida com carregamento instantâneo no celular e botão direto para o WhatsApp.
                         </p>
                         <div class="flex flex-wrap gap-1.5 mb-6">
-                            <span class="text-[10px] px-2 py-0.5 rounded bg-white/5 border border-white/10 text-gray-300">One Page</span>
-                            <span class="text-[10px] px-2 py-0.5 rounded bg-white/5 border border-white/10 text-gray-300">Landing Pages</span>
-                            <span class="text-[10px] px-2 py-0.5 rounded bg-white/5 border border-white/10 text-gray-300">SEO & Speed</span>
+                            <span class="text-[10px] px-2.5 py-1 rounded bg-white/5 border border-white/10 text-gray-300 service-tag">Sites para Empresas</span>
+                            <span class="text-[10px] px-2.5 py-1 rounded bg-white/5 border border-white/10 text-gray-300 service-tag">Página Única / Apresentação Rápida</span>
+                            <span class="text-[10px] px-2.5 py-1 rounded bg-white/5 border border-white/10 text-gray-300 service-tag">Botão Direto para WhatsApp</span>
+                            <span class="text-[10px] px-2.5 py-1 rounded bg-white/5 border border-white/10 text-gray-300 service-tag">Carregamento Rápido no Celular</span>
+                            <span class="text-[10px] px-2.5 py-1 rounded bg-white/5 border border-white/10 text-gray-300 service-tag">Compatível com Celular e PC</span>
+                            <span class="text-[10px] px-2.5 py-1 rounded bg-white/5 border border-white/10 text-gray-300 service-tag">Apareça no Google (SEO)</span>
+                            <span class="text-[10px] px-2.5 py-1 rounded bg-white/5 border border-white/10 text-gray-300 service-tag">Hospedagem & E-mail Profissional</span>
+                            <span class="text-[10px] px-2.5 py-1 rounded bg-white/5 border border-white/10 text-gray-300 service-tag">Design Moderno & Exclusivo</span>
                         </div>
                     </div>
                     <div class="pt-4 border-t border-white/10 flex items-center justify-between text-xs font-bold text-[#ccff00]">
@@ -476,19 +637,24 @@
                 <!-- Serviço 2: Infra & Redes -->
                 <div class="tech-card rounded-2xl p-7 flex flex-col justify-between group cursor-pointer" onclick="openServiceModal('infra')" data-aos="fade-up" data-aos-delay="200">
                     <div>
-                        <div class="w-12 h-12 rounded-xl bg-[#06080c] border border-white/10 flex items-center justify-center text-[#ccff00] mb-6 group-hover:border-[#ccff00] group-hover:scale-110 transition-all">
+                        <div class="w-12 h-12 rounded-xl bg-[#070a10] border border-white/10 flex items-center justify-center text-[#ccff00] mb-6 group-hover:border-[#ccff00] group-hover:scale-110 transition-all">
                             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                         </div>
                         <h3 class="font-display font-bold text-xl text-white mb-3 group-hover:text-[#ccff00] transition-colors">
                             Infraestrutura & Redes
                         </h3>
                         <p class="text-gray-400 text-xs leading-relaxed mb-6">
-                            Estruturação física e lógica de redes, gestão de servidores corporativos, roteadores MikroTik/Cisco e suporte técnico contínuo.
+                            Estruturação física e lógica de redes corporativas, servidores, roteadores de alta capacidade, Wi-Fi seguro para clientes e suporte técnico contínuo.
                         </p>
                         <div class="flex flex-wrap gap-1.5 mb-6">
-                            <span class="text-[10px] px-2 py-0.5 rounded bg-white/5 border border-white/10 text-gray-300">Servidores</span>
-                            <span class="text-[10px] px-2 py-0.5 rounded bg-white/5 border border-white/10 text-gray-300">Redes Cabeadas</span>
-                            <span class="text-[10px] px-2 py-0.5 rounded bg-white/5 border border-white/10 text-gray-300">SLA Técnico</span>
+                            <span class="text-[10px] px-2.5 py-1 rounded bg-white/5 border border-white/10 text-gray-300 service-tag">Redes para Empresas & Lojas</span>
+                            <span class="text-[10px] px-2.5 py-1 rounded bg-white/5 border border-white/10 text-gray-300 service-tag">Wi-Fi Corporativo Potente</span>
+                            <span class="text-[10px] px-2.5 py-1 rounded bg-white/5 border border-white/10 text-gray-300 service-tag">Cabeamento Estruturado</span>
+                            <span class="text-[10px] px-2.5 py-1 rounded bg-white/5 border border-white/10 text-gray-300 service-tag">Configuração de Servidores</span>
+                            <span class="text-[10px] px-2.5 py-1 rounded bg-white/5 border border-white/10 text-gray-300 service-tag">Segurança contra Quedas</span>
+                            <span class="text-[10px] px-2.5 py-1 rounded bg-white/5 border border-white/10 text-gray-300 service-tag">Backup Automático de Dados</span>
+                            <span class="text-[10px] px-2.5 py-1 rounded bg-white/5 border border-white/10 text-gray-300 service-tag">Organização de Racks & Cabos</span>
+                            <span class="text-[10px] px-2.5 py-1 rounded bg-white/5 border border-white/10 text-gray-300 service-tag">Suporte Técnico Preventivo</span>
                         </div>
                     </div>
                     <div class="pt-4 border-t border-white/10 flex items-center justify-between text-xs font-bold text-[#ccff00]">
@@ -497,22 +663,30 @@
                     </div>
                 </div>
 
-                <!-- Serviço 3: Hardware -->
-                <div class="tech-card rounded-2xl p-7 flex flex-col justify-between group cursor-pointer" onclick="openServiceModal('hardware')" data-aos="fade-up" data-aos-delay="300">
+                <!-- Serviço 3: Hardware (Foco Principal em SAJ) -->
+                <div class="tech-card rounded-2xl p-7 flex flex-col justify-between group cursor-pointer border-[#ccff00]/30 shadow-[0_0_30px_rgba(204,255,0,0.06)]" onclick="openServiceModal('hardware')" data-aos="fade-up" data-aos-delay="300">
                     <div>
-                        <div class="w-12 h-12 rounded-xl bg-[#06080c] border border-white/10 flex items-center justify-center text-[#ccff00] mb-6 group-hover:border-[#ccff00] group-hover:scale-110 transition-all">
+                        <div class="w-12 h-12 rounded-xl bg-[#070a10] border border-[#ccff00]/40 flex items-center justify-center text-[#ccff00] mb-4 group-hover:border-[#ccff00] group-hover:scale-110 transition-all shadow-[0_0_15px_rgba(204,255,0,0.2)]">
                             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path></svg>
                         </div>
+                        <div class="inline-block px-2.5 py-1 rounded bg-[#ccff00]/15 border border-[#ccff00]/30 text-[#ccff00] text-[10px] font-bold uppercase tracking-wider mb-3">
+                            Foco Principal Presencial
+                        </div>
                         <h3 class="font-display font-bold text-xl text-white mb-3 group-hover:text-[#ccff00] transition-colors">
-                            Hardware & Reparos
+                            Hardware & Manutenção SAJ
                         </h3>
                         <p class="text-gray-400 text-xs leading-relaxed mb-6">
-                            Montagem milimétrica de PC Gamer e estações de trabalho, diagnósticos térmicos, substituição de pasta térmica e reparos eletrônicos em placas.
+                            Foco prioritário em atendimento e manutenção presencial em Santo Antônio de Jesus (SAJ). Conserto de computadores, notebooks, troca de peças, limpeza profunda e reparos eletrônicos em placas.
                         </p>
                         <div class="flex flex-wrap gap-1.5 mb-6">
-                            <span class="text-[10px] px-2 py-0.5 rounded bg-white/5 border border-white/10 text-gray-300">PC Gamer</span>
-                            <span class="text-[10px] px-2 py-0.5 rounded bg-white/5 border border-white/10 text-gray-300">Workstation</span>
-                            <span class="text-[10px] px-2 py-0.5 rounded bg-white/5 border border-white/10 text-gray-300">Microsolda</span>
+                            <span class="text-[10px] px-2.5 py-1 rounded bg-[#ccff00]/15 border border-[#ccff00]/30 text-[#ccff00] font-semibold service-tag">Manutenção em SAJ</span>
+                            <span class="text-[10px] px-2.5 py-1 rounded bg-white/5 border border-white/10 text-gray-300 service-tag">Atendimento Presencial SAJ</span>
+                            <span class="text-[10px] px-2.5 py-1 rounded bg-white/5 border border-white/10 text-gray-300 service-tag">Conserto de PCs & Notebooks</span>
+                            <span class="text-[10px] px-2.5 py-1 rounded bg-white/5 border border-white/10 text-gray-300 service-tag">Limpeza & Troca de Pasta</span>
+                            <span class="text-[10px] px-2.5 py-1 rounded bg-white/5 border border-white/10 text-gray-300 service-tag">Upgrade de SSD & Velocidade</span>
+                            <span class="text-[10px] px-2.5 py-1 rounded bg-white/5 border border-white/10 text-gray-300 service-tag">Formatação Windows & Linux</span>
+                            <span class="text-[10px] px-2.5 py-1 rounded bg-white/5 border border-white/10 text-gray-300 service-tag">Montagem para Trabalho & PC Gamer</span>
+                            <span class="text-[10px] px-2.5 py-1 rounded bg-white/5 border border-white/10 text-gray-300 service-tag">Reparo Eletrônico em Placas</span>
                         </div>
                     </div>
                     <div class="pt-4 border-t border-white/10 flex items-center justify-between text-xs font-bold text-[#ccff00]">
@@ -524,19 +698,24 @@
                 <!-- Serviço 4: Design -->
                 <div class="tech-card rounded-2xl p-7 flex flex-col justify-between group cursor-pointer" onclick="openServiceModal('design')" data-aos="fade-up" data-aos-delay="400">
                     <div>
-                        <div class="w-12 h-12 rounded-xl bg-[#06080c] border border-white/10 flex items-center justify-center text-[#ccff00] mb-6 group-hover:border-[#ccff00] group-hover:scale-110 transition-all">
+                        <div class="w-12 h-12 rounded-xl bg-[#070a10] border border-white/10 flex items-center justify-center text-[#ccff00] mb-6 group-hover:border-[#ccff00] group-hover:scale-110 transition-all">
                             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path></svg>
                         </div>
                         <h3 class="font-display font-bold text-xl text-white mb-3 group-hover:text-[#ccff00] transition-colors">
                             Design & Identidade
                         </h3>
                         <p class="text-gray-400 text-xs leading-relaxed mb-6">
-                            Construção de marcas tecnológicas: logotipos geométricos, manuais de identidade, UI/UX minimalista e peças gráficas digitais exclusivas.
+                            Construção visual da sua marca: criação de logotipos profissionais, manual de identidade, cartões interativos e peças digitais exclusivas para divulgação.
                         </p>
                         <div class="flex flex-wrap gap-1.5 mb-6">
-                            <span class="text-[10px] px-2 py-0.5 rounded bg-white/5 border border-white/10 text-gray-300">Logotipos</span>
-                            <span class="text-[10px] px-2 py-0.5 rounded bg-white/5 border border-white/10 text-gray-300">Branding Tech</span>
-                            <span class="text-[10px] px-2 py-0.5 rounded bg-white/5 border border-white/10 text-gray-300">UI/UX Design</span>
+                            <span class="text-[10px] px-2.5 py-1 rounded bg-white/5 border border-white/10 text-gray-300 service-tag">Criação de Logotipos</span>
+                            <span class="text-[10px] px-2.5 py-1 rounded bg-white/5 border border-white/10 text-gray-300 service-tag">Identidade Visual Completa</span>
+                            <span class="text-[10px] px-2.5 py-1 rounded bg-white/5 border border-white/10 text-gray-300 service-tag">Cartões de Visita Digitais</span>
+                            <span class="text-[10px] px-2.5 py-1 rounded bg-white/5 border border-white/10 text-gray-300 service-tag">Banners para Redes Sociais</span>
+                            <span class="text-[10px] px-2.5 py-1 rounded bg-white/5 border border-white/10 text-gray-300 service-tag">Padronização de Marca</span>
+                            <span class="text-[10px] px-2.5 py-1 rounded bg-white/5 border border-white/10 text-gray-300 service-tag">Apresentações Comerciais</span>
+                            <span class="text-[10px] px-2.5 py-1 rounded bg-white/5 border border-white/10 text-gray-300 service-tag">Arquivos em Alta Definição</span>
+                            <span class="text-[10px] px-2.5 py-1 rounded bg-white/5 border border-white/10 text-gray-300 service-tag">Material para Gráfica & Web</span>
                         </div>
                     </div>
                     <div class="pt-4 border-t border-white/10 flex items-center justify-between text-xs font-bold text-[#ccff00]">
@@ -552,134 +731,256 @@
     <div class="neon-divider"></div>
 
     <!-- ========================================================================= -->
-    <!-- PORTFÓLIO & CASES (Vitrine de Alta Conversão)                             -->
+    <!-- SIMULADOR RÁPIDO DE SERVIÇOS (Elemento Interativo Dinâmico)               -->
     <!-- ========================================================================= -->
-    <section id="portfolio" class="py-24 relative bg-[#0b0f17]/40">
+    <section id="simulador" class="py-24 relative bg-[#090d16]/70">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#ccff00]/10 text-[#ccff00] text-xs font-bold uppercase tracking-wider mb-3 border border-[#ccff00]/20">
+                    Interatividade Prática
+                </div>
+                <h2 class="font-display text-3xl md:text-5xl font-bold text-white mb-4">
+                    Simule seu Atendimento em 1 Clique
+                </h2>
+                <p class="text-gray-400 max-w-xl mx-auto text-sm">
+                    Selecione o que você ou sua empresa precisa. Nosso simulador calcula a modalidade de atendimento e prepara seu contato direto com nossos técnicos especializados.
+                </p>
+            </div>
+
+            <!-- Card Principal do Simulador -->
+            <div class="tech-card rounded-3xl p-6 sm:p-10 border border-white/10" data-aos="zoom-in">
+                <h4 class="text-white font-bold text-sm sm:text-base mb-5 flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-[#ccff00]"></span>
+                    Quais soluções você precisa no momento? (Selecione uma ou mais)
+                </h4>
+
+                <!-- Opções Clicáveis Interativas -->
+                <div class="grid sm:grid-cols-2 gap-4 mb-8">
+                    <!-- Opção 1 -->
+                    <div class="sim-option p-4 rounded-xl border border-white/10 bg-[#070a10] flex items-center justify-between" onclick="toggleSimOption(this, 'Manutenção em SAJ (Computador / Hardware)')">
+                        <div class="flex items-center gap-3">
+                            <span class="text-2xl">🔧</span>
+                            <div>
+                                <h5 class="text-white font-bold text-sm">Manutenção Técnica em SAJ</h5>
+                                <p class="text-xs text-gray-400">Conserto de PCs, formatação, peças e reparo em bancada</p>
+                            </div>
+                        </div>
+                        <div class="sim-checkbox-circle w-6 h-6 rounded-full border border-white/20 flex items-center justify-center flex-shrink-0 text-xs font-bold ml-2">✓</div>
+                    </div>
+
+                    <!-- Opção 2 -->
+                    <div class="sim-option p-4 rounded-xl border border-white/10 bg-[#070a10] flex items-center justify-between" onclick="toggleSimOption(this, 'Criação de Site para Empresa / Página de Apresentação')">
+                        <div class="flex items-center gap-3">
+                            <span class="text-2xl">🌐</span>
+                            <div>
+                                <h5 class="text-white font-bold text-sm">Site para Empresa / Página Única</h5>
+                                <p class="text-xs text-gray-400">Página rápida com botão WhatsApp (A consultar)</p>
+                            </div>
+                        </div>
+                        <div class="sim-checkbox-circle w-6 h-6 rounded-full border border-white/20 flex items-center justify-center flex-shrink-0 text-xs font-bold ml-2">✓</div>
+                    </div>
+
+                    <!-- Opção 3 -->
+                    <div class="sim-option p-4 rounded-xl border border-white/10 bg-[#070a10] flex items-center justify-between" onclick="toggleSimOption(this, 'Infraestrutura de Redes, Wi-Fi & Servidores')">
+                        <div class="flex items-center gap-3">
+                            <span class="text-2xl">📶</span>
+                            <div>
+                                <h5 class="text-white font-bold text-sm">Redes de TI & Wi-Fi Corporativo</h5>
+                                <p class="text-xs text-gray-400">Cabeamento estruturado, roteadores e estabilidade</p>
+                            </div>
+                        </div>
+                        <div class="sim-checkbox-circle w-6 h-6 rounded-full border border-white/20 flex items-center justify-center flex-shrink-0 text-xs font-bold ml-2">✓</div>
+                    </div>
+
+                    <!-- Opção 4 -->
+                    <div class="sim-option p-4 rounded-xl border border-white/10 bg-[#070a10] flex items-center justify-between" onclick="toggleSimOption(this, 'Criação de Logotipo & Identidade Visual')">
+                        <div class="flex items-center gap-3">
+                            <span class="text-2xl">🎨</span>
+                            <div>
+                                <h5 class="text-white font-bold text-sm">Logotipo & Identidade Visual</h5>
+                                <p class="text-xs text-gray-400">Marca profissional, cartões digitais e materiais</p>
+                            </div>
+                        </div>
+                        <div class="sim-checkbox-circle w-6 h-6 rounded-full border border-white/20 flex items-center justify-center flex-shrink-0 text-xs font-bold ml-2">✓</div>
+                    </div>
+                </div>
+
+                <!-- Painel Dinâmico de Resumo -->
+                <div class="bg-[#070a10] border border-white/10 rounded-2xl p-5 sm:p-6 flex flex-col md:flex-row md:items-center justify-between gap-6">
+                    <div>
+                        <span class="text-[11px] font-mono uppercase tracking-wider text-[#ccff00] block mb-1">Resumo da Seleção</span>
+                        <div id="sim-summary-text" class="text-sm font-semibold text-white">
+                            Nenhum serviço selecionado ainda. Clique nas opções acima para montar seu pedido.
+                        </div>
+                        <p id="sim-location-hint" class="text-xs text-gray-400 mt-1">
+                            Atendimento presencial focado em Santo Antônio de Jesus (SAJ) & suporte remoto para todo o Brasil.
+                        </p>
+                    </div>
+
+                    <a id="sim-whatsapp-btn" href="https://wa.me/5575998729593?text=Ol%C3%A1%2C%20equipe%20t%C3%A9cnica%20da%20Rocky%20Tree!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento." target="_blank" 
+                       class="px-6 py-3.5 btn-neon-solid rounded-xl text-xs uppercase tracking-wider font-bold whitespace-nowrap flex items-center justify-center gap-2">
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.124.557 4.122 1.54 5.874l-1.636 5.975 6.115-1.604c1.691.92 3.619 1.447 5.981 1.447 6.627 0 12-5.373 12-12s-5.373-12-12-12z"/></svg>
+                        <span>Conversar no WhatsApp</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="neon-divider"></div>
+
+    <!-- ========================================================================= -->
+    <!-- PORTFÓLIO & CASES (Filtro Interativo por Categoria, Sem Métricas no Canto)-->
+    <!-- ========================================================================= -->
+    <section id="portfolio" class="py-24 relative bg-[#0c101a]/50">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6" data-aos="fade-up">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6" data-aos="fade-up">
                 <div>
                     <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#ccff00]/10 text-[#ccff00] text-xs font-bold uppercase tracking-wider mb-3 border border-[#ccff00]/20">
-                        Portfólio Institucional
+                        Cases & Projetos
                     </div>
                     <h2 class="font-display text-3xl md:text-5xl font-bold text-white">
                         Projetos & Entregas
                     </h2>
                 </div>
                 <p class="text-gray-400 text-sm max-w-md">
-                    Alguns dos projetos estruturados com a marca registrada Rocky Tree: robustez, minimalismo tecnológico e máxima performance.
+                    Alguns dos trabalhos desenvolvidos por nossos técnicos com foco em acabamento profissional, estabilidade e resultados reais.
                 </p>
             </div>
 
-            <!-- Grid de Cards do Portfólio -->
+            <!-- Filtros Interativos do Portfólio -->
+            <div class="flex flex-wrap gap-2 mb-10" data-aos="fade-up">
+                <button class="portfolio-tab active px-4 py-2 rounded-xl text-xs font-semibold border border-white/10 bg-white/5 text-gray-300" onclick="filterPortfolio('all', this)">
+                    Todos os Projetos
+                </button>
+                <button class="portfolio-tab px-4 py-2 rounded-xl text-xs font-semibold border border-white/10 bg-white/5 text-gray-300" onclick="filterPortfolio('web', this)">
+                    🌐 Sites para Empresas
+                </button>
+                <button class="portfolio-tab px-4 py-2 rounded-xl text-xs font-semibold border border-white/10 bg-white/5 text-gray-300" onclick="filterPortfolio('hardware', this)">
+                    🔧 Manutenção em SAJ
+                </button>
+                <button class="portfolio-tab px-4 py-2 rounded-xl text-xs font-semibold border border-white/10 bg-white/5 text-gray-300" onclick="filterPortfolio('infra', this)">
+                    📶 Redes Corporativas
+                </button>
+                <button class="portfolio-tab px-4 py-2 rounded-xl text-xs font-semibold border border-white/10 bg-white/5 text-gray-300" onclick="filterPortfolio('design', this)">
+                    🎨 Identidade Visual
+                </button>
+            </div>
+
+            <!-- Grid de Cards do Portfólio (Sem dados de resultados no canto inferior esquerdo) -->
             <div class="grid md:grid-cols-2 gap-8">
                 
-                <!-- Projeto 1: Web App / Landing Page -->
-                <div class="tech-card rounded-2xl p-6 sm:p-8 flex flex-col justify-between group relative overflow-hidden" data-aos="fade-up" data-aos-delay="100">
-                    <div class="flex items-center justify-between mb-6">
-                        <span class="text-xs font-mono text-[#ccff00] tracking-wider uppercase bg-[#ccff00]/10 px-3 py-1 rounded-md border border-[#ccff00]/20">
-                            Desenvolvimento Web
-                        </span>
-                        <span class="text-xs text-gray-500 font-mono">CASE #01</span>
+                <!-- Projeto 1: Web -->
+                <div class="portfolio-card tech-card rounded-2xl p-6 sm:p-8 flex flex-col justify-between group relative overflow-hidden" data-category="web" data-aos="fade-up" data-aos-delay="100">
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <span class="text-xs font-mono text-[#ccff00] tracking-wider uppercase bg-[#ccff00]/10 px-3 py-1 rounded-md border border-[#ccff00]/20">
+                                Desenvolvimento Web
+                            </span>
+                            <span class="text-xs text-gray-500 font-mono">PROJETO #01</span>
+                        </div>
+                        <h3 class="font-display text-2xl font-bold text-white mb-3 group-hover:text-[#ccff00] transition-colors">
+                            Site Completo & Página Comercial para Empresas
+                        </h3>
+                        <p class="text-gray-400 text-sm mb-6 leading-relaxed">
+                            Desenvolvimento de site moderno e intuitivo para apresentação de produtos e serviços, com carregamento rápido em celulares, assistente virtual inteligente e botão de contato direto para o WhatsApp.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-8">
+                            <span class="text-xs px-2.5 py-1 bg-white/5 border border-white/10 rounded-md text-gray-300">Página Única ou Completa</span>
+                            <span class="text-xs px-2.5 py-1 bg-white/5 border border-white/10 rounded-md text-gray-300">Fácil de Navegar no Celular</span>
+                            <span class="text-xs px-2.5 py-1 bg-white/5 border border-white/10 rounded-md text-gray-300">Botão WhatsApp Direto</span>
+                            <span class="text-xs px-2.5 py-1 bg-white/5 border border-white/10 rounded-md text-gray-300">Sem Termos Complicados</span>
+                        </div>
                     </div>
-                    <h3 class="font-display text-2xl font-bold text-white mb-3 group-hover:text-[#ccff00] transition-colors">
-                        Landing Page One Page em Dark UI
-                    </h3>
-                    <p class="text-gray-400 text-sm mb-6 leading-relaxed">
-                        Desenvolvimento de interface institucional orientada à conversão, com micro-interações, assistente virtual inteligente e orçamentação automatizada direto para o WhatsApp.
-                    </p>
-                    <div class="flex flex-wrap gap-2 mb-8">
-                        <span class="text-xs px-2.5 py-1 bg-white/5 border border-white/10 rounded-md text-gray-300">One Page</span>
-                        <span class="text-xs px-2.5 py-1 bg-white/5 border border-white/10 rounded-md text-gray-300">Dark UI</span>
-                        <span class="text-xs px-2.5 py-1 bg-white/5 border border-white/10 rounded-md text-gray-300">TreeBot IA</span>
-                        <span class="text-xs px-2.5 py-1 bg-white/5 border border-white/10 rounded-md text-gray-300">WhatsApp Lead</span>
-                    </div>
-                    <div class="pt-6 border-t border-white/10 flex items-center justify-between">
-                        <span class="text-xs text-gray-400">Tempo de Carga: <strong class="text-white">&lt; 0.8s</strong></span>
-                        <a href="https://wa.me/5575998729593?text=Ol%C3%A1%2C%20Rocky%20Tree!%20Gostei%20do%20case%20de%20Landing%20Page%20One%20Page%20e%20quero%20um%20projeto%20similar." target="_blank" class="text-xs uppercase font-bold text-[#ccff00] hover:text-white flex items-center gap-1.5 transition-colors">
+                    <div class="pt-5 border-t border-white/10 flex items-center justify-end">
+                        <a href="https://wa.me/5575998729593?text=Ol%C3%A1%2C%20equipe%20da%20Rocky%20Tree!%20Gostei%20do%20projeto%20de%20Site%20para%20Empresas%20e%20gostaria%20de%20um%20or%C3%A7amento." target="_blank" class="text-xs uppercase font-bold text-[#ccff00] hover:text-white flex items-center gap-1.5 transition-colors">
                             Solicitar Similar <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                         </a>
                     </div>
                 </div>
 
-                <!-- Projeto 2: Infraestrutura de Redes -->
-                <div class="tech-card rounded-2xl p-6 sm:p-8 flex flex-col justify-between group relative overflow-hidden" data-aos="fade-up" data-aos-delay="200">
-                    <div class="flex items-center justify-between mb-6">
-                        <span class="text-xs font-mono text-[#ccff00] tracking-wider uppercase bg-[#ccff00]/10 px-3 py-1 rounded-md border border-[#ccff00]/20">
-                            Infra & Redes
-                        </span>
-                        <span class="text-xs text-gray-500 font-mono">CASE #02</span>
+                <!-- Projeto 2: Infra & Redes -->
+                <div class="portfolio-card tech-card rounded-2xl p-6 sm:p-8 flex flex-col justify-between group relative overflow-hidden" data-category="infra" data-aos="fade-up" data-aos-delay="200">
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <span class="text-xs font-mono text-[#ccff00] tracking-wider uppercase bg-[#ccff00]/10 px-3 py-1 rounded-md border border-[#ccff00]/20">
+                                Infra & Redes
+                            </span>
+                            <span class="text-xs text-gray-500 font-mono">PROJETO #02</span>
+                        </div>
+                        <h3 class="font-display text-2xl font-bold text-white mb-3 group-hover:text-[#ccff00] transition-colors">
+                            Reestruturação de Rede e Wi-Fi Corporativo
+                        </h3>
+                        <p class="text-gray-400 text-sm mb-6 leading-relaxed">
+                            Organização completa de cabeamento de rede, roteadores empresariais configurados contra lentidão, rede Wi-Fi separada para clientes e funcionários e rotina de cópias de segurança para arquivos importantes.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-8">
+                            <span class="text-xs px-2.5 py-1 bg-white/5 border border-white/10 rounded-md text-gray-300">Roteamento Empresarial</span>
+                            <span class="text-xs px-2.5 py-1 bg-white/5 border border-white/10 rounded-md text-gray-300">Wi-Fi Estável de Longo Alcance</span>
+                            <span class="text-xs px-2.5 py-1 bg-white/5 border border-white/10 rounded-md text-gray-300">Proteção contra Quedas</span>
+                            <span class="text-xs px-2.5 py-1 bg-white/5 border border-white/10 rounded-md text-gray-300">Backup Seguro de Dados</span>
+                        </div>
                     </div>
-                    <h3 class="font-display text-2xl font-bold text-white mb-3 group-hover:text-[#ccff00] transition-colors">
-                        Reestruturação de Rede Corporativa & Firewall
-                    </h3>
-                    <p class="text-gray-400 text-sm mb-6 leading-relaxed">
-                        Implementação de roteamento avançado com MikroTik, segregação de tráfego por VLANs, Wi-Fi 6 de alta densidade e política de backup criptografado para empresa regional.
-                    </p>
-                    <div class="flex flex-wrap gap-2 mb-8">
-                        <span class="text-xs px-2.5 py-1 bg-white/5 border border-white/10 rounded-md text-gray-300">MikroTik RouterOS</span>
-                        <span class="text-xs px-2.5 py-1 bg-white/5 border border-white/10 rounded-md text-gray-300">VLANs</span>
-                        <span class="text-xs px-2.5 py-1 bg-white/5 border border-white/10 rounded-md text-gray-300">Wi-Fi 6 Mesh</span>
-                        <span class="text-xs px-2.5 py-1 bg-white/5 border border-white/10 rounded-md text-gray-300">Segurança de Borda</span>
-                    </div>
-                    <div class="pt-6 border-t border-white/10 flex items-center justify-between">
-                        <span class="text-xs text-gray-400">Disponibilidade: <strong class="text-white">99.98%</strong></span>
-                        <a href="https://wa.me/5575998729593?text=Ol%C3%A1%2C%20Rocky%20Tree!%20Preciso%20de%20um%20projeto%20de%20infraestrutura%20de%20redes%20corporativa." target="_blank" class="text-xs uppercase font-bold text-[#ccff00] hover:text-white flex items-center gap-1.5 transition-colors">
+                    <div class="pt-5 border-t border-white/10 flex items-center justify-end">
+                        <a href="https://wa.me/5575998729593?text=Ol%C3%A1%2C%20equipe%20da%20Rocky%20Tree!%20Preciso%20de%20um%20projeto%20de%20infraestrutura%20de%20redes%20para%20minha%20empresa." target="_blank" class="text-xs uppercase font-bold text-[#ccff00] hover:text-white flex items-center gap-1.5 transition-colors">
                             Solicitar Similar <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                         </a>
                     </div>
                 </div>
 
-                <!-- Projeto 3: Hardware & Workstation Custom -->
-                <div class="tech-card rounded-2xl p-6 sm:p-8 flex flex-col justify-between group relative overflow-hidden" data-aos="fade-up" data-aos-delay="300">
-                    <div class="flex items-center justify-between mb-6">
-                        <span class="text-xs font-mono text-[#ccff00] tracking-wider uppercase bg-[#ccff00]/10 px-3 py-1 rounded-md border border-[#ccff00]/20">
-                            Hardware & Workstation
-                        </span>
-                        <span class="text-xs text-gray-500 font-mono">CASE #03</span>
+                <!-- Projeto 3: Hardware (SAJ) -->
+                <div class="portfolio-card tech-card rounded-2xl p-6 sm:p-8 flex flex-col justify-between group relative overflow-hidden" data-category="hardware" data-aos="fade-up" data-aos-delay="300">
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <span class="text-xs font-mono text-[#ccff00] tracking-wider uppercase bg-[#ccff00]/10 px-3 py-1 rounded-md border border-[#ccff00]/20">
+                                Hardware em SAJ
+                            </span>
+                            <span class="text-xs text-gray-500 font-mono">PROJETO #03</span>
+                        </div>
+                        <h3 class="font-display text-2xl font-bold text-white mb-3 group-hover:text-[#ccff00] transition-colors">
+                            Manutenção & Montagem de Computador de Alta Performance
+                        </h3>
+                        <p class="text-gray-400 text-sm mb-6 leading-relaxed">
+                            Montagem sob medida e revisão técnica em bancada com organização impecável de fios, sistema de resfriamento silencioso e testes completos de resistência para garantir operação contínua sem travamentos.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-8">
+                            <span class="text-xs px-2.5 py-1 bg-white/5 border border-white/10 rounded-md text-gray-300">Computador para Trabalho & Jogos</span>
+                            <span class="text-xs px-2.5 py-1 bg-white/5 border border-white/10 rounded-md text-gray-300">Fios e Cabos Organizados</span>
+                            <span class="text-xs px-2.5 py-1 bg-white/5 border border-white/10 rounded-md text-gray-300">Refrigeração Eficiente</span>
+                            <span class="text-xs px-2.5 py-1 bg-white/5 border border-white/10 rounded-md text-gray-300">Garantia Técnica</span>
+                        </div>
                     </div>
-                    <h3 class="font-display text-2xl font-bold text-white mb-3 group-hover:text-[#ccff00] transition-colors">
-                        Estação de Trabalho High-End para Render & IA
-                    </h3>
-                    <p class="text-gray-400 text-sm mb-6 leading-relaxed">
-                        Seleção rigorosa de componentes, montagem sob medida com cable management cirúrgico, ajuste de curvas de ventilação e bateria de benchmarks de estresse térmico para estabilidade absoluta.
-                    </p>
-                    <div class="flex flex-wrap gap-2 mb-8">
-                        <span class="text-xs px-2.5 py-1 bg-white/5 border border-white/10 rounded-md text-gray-300">Workstation</span>
-                        <span class="text-xs px-2.5 py-1 bg-white/5 border border-white/10 rounded-md text-gray-300">RTX Série 40</span>
-                        <span class="text-xs px-2.5 py-1 bg-white/5 border border-white/10 rounded-md text-gray-300">Stress Benchmarks</span>
-                        <span class="text-xs px-2.5 py-1 bg-white/5 border border-white/10 rounded-md text-gray-300">Curvas Térmicas</span>
-                    </div>
-                    <div class="pt-6 border-t border-white/10 flex items-center justify-between">
-                        <span class="text-xs text-gray-400">Eficiência Térmica: <strong class="text-white">-14°C Delta</strong></span>
-                        <a href="https://wa.me/5575998729593?text=Ol%C3%A1%2C%20Rocky%20Tree!%20Quero%20montar%20uma%20Workstation%20ou%20PC%20Gamer." target="_blank" class="text-xs uppercase font-bold text-[#ccff00] hover:text-white flex items-center gap-1.5 transition-colors">
+                    <div class="pt-5 border-t border-white/10 flex items-center justify-end">
+                        <a href="https://wa.me/5575998729593?text=Ol%C3%A1%2C%20equipe%20da%20Rocky%20Tree!%20Gostaria%20de%20montar%20ou%20consertar%20um%20computador%20em%20SAJ." target="_blank" class="text-xs uppercase font-bold text-[#ccff00] hover:text-white flex items-center gap-1.5 transition-colors">
                             Solicitar Similar <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                         </a>
                     </div>
                 </div>
 
-                <!-- Projeto 4: Design & Identidade Visual Tech -->
-                <div class="tech-card rounded-2xl p-6 sm:p-8 flex flex-col justify-between group relative overflow-hidden" data-aos="fade-up" data-aos-delay="400">
-                    <div class="flex items-center justify-between mb-6">
-                        <span class="text-xs font-mono text-[#ccff00] tracking-wider uppercase bg-[#ccff00]/10 px-3 py-1 rounded-md border border-[#ccff00]/20">
-                            Design & Branding
-                        </span>
-                        <span class="text-xs text-gray-500 font-mono">CASE #04</span>
+                <!-- Projeto 4: Design -->
+                <div class="portfolio-card tech-card rounded-2xl p-6 sm:p-8 flex flex-col justify-between group relative overflow-hidden" data-category="design" data-aos="fade-up" data-aos-delay="400">
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <span class="text-xs font-mono text-[#ccff00] tracking-wider uppercase bg-[#ccff00]/10 px-3 py-1 rounded-md border border-[#ccff00]/20">
+                                Design & Identidade
+                            </span>
+                            <span class="text-xs text-gray-500 font-mono">PROJETO #04</span>
+                        </div>
+                        <h3 class="font-display text-2xl font-bold text-white mb-3 group-hover:text-[#ccff00] transition-colors">
+                            Identidade Visual e Logotipo para Marca Corporativa
+                        </h3>
+                        <p class="text-gray-400 text-sm mb-6 leading-relaxed">
+                            Criação de logotipo profissional, manual prático de uso da marca, paleta de cores harmoniosa, cartões interativos para redes sociais e arquivos em alta qualidade prontos para impressão ou uso digital.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-8">
+                            <span class="text-xs px-2.5 py-1 bg-white/5 border border-white/10 rounded-md text-gray-300">Logotipo Exclusivo</span>
+                            <span class="text-xs px-2.5 py-1 bg-white/5 border border-white/10 rounded-md text-gray-300">Arquivos em Alta Definição</span>
+                            <span class="text-xs px-2.5 py-1 bg-white/5 border border-white/10 rounded-md text-gray-300">Pronto para Gráfica e Internet</span>
+                            <span class="text-xs px-2.5 py-1 bg-white/5 border border-white/10 rounded-md text-gray-300">Manual Prático da Marca</span>
+                        </div>
                     </div>
-                    <h3 class="font-display text-2xl font-bold text-white mb-3 group-hover:text-[#ccff00] transition-colors">
-                        Identidade Visual Tech Minimalist & Design System
-                    </h3>
-                    <p class="text-gray-400 text-sm mb-6 leading-relaxed">
-                        Criação de logotipo vetorial, manual de aplicação, paleta de contraste escuro com destaque neon e biblioteca de componentes digitais para posicionamento de alto padrão.
-                    </p>
-                    <div class="flex flex-wrap gap-2 mb-8">
-                        <span class="text-xs px-2.5 py-1 bg-white/5 border border-white/10 rounded-md text-gray-300">Branding Tech</span>
-                        <span class="text-xs px-2.5 py-1 bg-white/5 border border-white/10 rounded-md text-gray-300">Design System</span>
-                        <span class="text-xs px-2.5 py-1 bg-white/5 border border-white/10 rounded-md text-gray-300">Vetorização</span>
-                        <span class="text-xs px-2.5 py-1 bg-white/5 border border-white/10 rounded-md text-gray-300">Tipografia Geométrica</span>
-                    </div>
-                    <div class="pt-6 border-t border-white/10 flex items-center justify-between">
-                        <span class="text-xs text-gray-400">Entrega: <strong class="text-white">Manual Completo</strong></span>
-                        <a href="https://wa.me/5575998729593?text=Ol%C3%A1%2C%20Rocky%20Tree!%20Gostaria%20de%20desenvolver%20uma%20Identidade%20Visual%20completa%20para%20minha%20marca." target="_blank" class="text-xs uppercase font-bold text-[#ccff00] hover:text-white flex items-center gap-1.5 transition-colors">
+                    <div class="pt-5 border-t border-white/10 flex items-center justify-end">
+                        <a href="https://wa.me/5575998729593?text=Ol%C3%A1%2C%20equipe%20da%20Rocky%20Tree!%20Gostaria%20de%20criar%20um%20logotipo%20e%20identidade%20visual%20para%20minha%20marca." target="_blank" class="text-xs uppercase font-bold text-[#ccff00] hover:text-white flex items-center gap-1.5 transition-colors">
                             Solicitar Similar <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                         </a>
                     </div>
@@ -704,7 +1005,7 @@
                     Modelos de Atendimento
                 </h2>
                 <p class="text-gray-400 max-w-2xl mx-auto text-sm md:text-base">
-                    Flexibilidade para atender demandas pontuais de criação e suporte ou contratos contínuos com SLA garantido.
+                    Flexibilidade para atender demandas pontuais de criação e suporte ou contratos mensais contínuos com atendimento prioritário.
                 </p>
             </div>
 
@@ -715,7 +1016,7 @@
                     <div>
                         <div class="flex items-center justify-between mb-4">
                             <span class="text-xs font-mono uppercase tracking-wider text-gray-400">Demanda Sob Medida</span>
-                            <span class="text-xs px-2.5 py-1 rounded bg-white/5 border border-white/10 text-gray-300">Entrega Fechada</span>
+                            <span class="text-xs px-2.5 py-1 rounded bg-white/5 border border-white/10 text-gray-300">Entrega Pontual</span>
                         </div>
                         <h3 class="font-display text-2xl font-bold text-white mb-2">Projetos Avulsos</h3>
                         <p class="text-xs text-gray-400 mb-6">
@@ -723,20 +1024,24 @@
                         </p>
                         <ul class="space-y-3.5 mb-8 text-sm text-gray-300">
                             <li class="flex items-center gap-3">
-                                <svg class="w-4 h-4 text-[#ccff00]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                                Criação de Landing Pages (R$ 400 a R$ 800)
+                                <svg class="w-4 h-4 text-[#ccff00] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                Criação de Sites para Empresas & Páginas de Apresentação (A consultar)
                             </li>
                             <li class="flex items-center gap-3">
-                                <svg class="w-4 h-4 text-[#ccff00]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                                Montagem e Otimização de PC Gamer/Workstation
+                                <svg class="w-4 h-4 text-[#ccff00] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                Manutenção e Conserto de Computadores em SAJ
                             </li>
                             <li class="flex items-center gap-3">
-                                <svg class="w-4 h-4 text-[#ccff00]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                                Logotipos e Identidades Visuais completas
+                                <svg class="w-4 h-4 text-[#ccff00] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                Montagem e Otimização de Computadores para Trabalho e Jogos
                             </li>
                             <li class="flex items-center gap-3">
-                                <svg class="w-4 h-4 text-[#ccff00]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                                Chamados avulsos de Redes e Reparos em Hardware
+                                <svg class="w-4 h-4 text-[#ccff00] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                Logotipos e Identidades Visuais completas para marcas
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <svg class="w-4 h-4 text-[#ccff00] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                Chamados Técnicos de Redes e Infraestrutura (R$ 120 a 180)
                             </li>
                         </ul>
                     </div>
@@ -748,14 +1053,14 @@
                 <!-- Modelo 2: Assinatura Mensal (Destaque) -->
                 <div class="tech-card rounded-3xl p-8 sm:p-10 border-[#ccff00]/40 flex flex-col justify-between relative shadow-[0_0_40px_rgba(204,255,0,0.08)]" data-aos="fade-left">
                     <div class="absolute -top-3.5 right-8">
-                        <span class="bg-[#ccff00] text-[#06080c] text-[11px] font-bold uppercase tracking-wider px-3.5 py-1 rounded-full shadow-lg">
+                        <span class="bg-[#ccff00] text-[#070a10] text-[11px] font-bold uppercase tracking-wider px-3.5 py-1 rounded-full shadow-lg">
                             Mais Procurado
                         </span>
                     </div>
                     <div>
                         <div class="flex items-center justify-between mb-4">
                             <span class="text-xs font-mono uppercase tracking-wider text-[#ccff00]">Parceria Contínua</span>
-                            <span class="text-xs px-2.5 py-1 rounded bg-[#ccff00]/10 border border-[#ccff00]/20 text-[#ccff00]">SLA Prioritário</span>
+                            <span class="text-xs px-2.5 py-1 rounded bg-[#ccff00]/10 border border-[#ccff00]/20 text-[#ccff00]">Prioridade Máxima</span>
                         </div>
                         <h3 class="font-display text-2xl font-bold text-white mb-2">Assinatura Mensal</h3>
                         <p class="text-xs text-gray-400 mb-6">
@@ -763,20 +1068,20 @@
                         </p>
                         <ul class="space-y-3.5 mb-8 text-sm text-gray-300">
                             <li class="flex items-center gap-3">
-                                <svg class="w-4 h-4 text-[#ccff00]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                                Suporte Técnico de TI (Planos de R$ 350 a R$ 900/mês)
-                            </li>
-                            <li class="flex items-center gap-3">
-                                <svg class="w-4 h-4 text-[#ccff00]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <svg class="w-4 h-4 text-[#ccff00] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
                                 Manutenção Web e Hospedagem (R$ 150 a R$ 250/mês)
                             </li>
                             <li class="flex items-center gap-3">
-                                <svg class="w-4 h-4 text-[#ccff00]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                                Gestão Contínua de Roteadores, Wi-Fi e Segurança
+                                <svg class="w-4 h-4 text-[#ccff00] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                Suporte Técnico de TI para Empresas (R$ 350 a R$ 900/mês)
                             </li>
                             <li class="flex items-center gap-3">
-                                <svg class="w-4 h-4 text-[#ccff00]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                                Atendimento Remoto Imediato e Visitas Técnicas
+                                <svg class="w-4 h-4 text-[#ccff00] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                Gestão Contínua de Roteadores, Wi-Fi e Proteção de Dados
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <svg class="w-4 h-4 text-[#ccff00] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                Atendimento com Prioridade Máxima (Remoto & Visitas Presenciais)
                             </li>
                         </ul>
                     </div>
@@ -792,9 +1097,97 @@
     <div class="neon-divider"></div>
 
     <!-- ========================================================================= -->
-    <!-- CONTATO & ORÇAMENTO RÁPIDO (Landing Page Conversion Section)              -->
+    <!-- DÚVIDAS FREQUENTES (FAQ Accordion Interativo - Respostas Sem Jargões)     -->
     <!-- ========================================================================= -->
-    <section id="contato" class="py-24 relative bg-[#0b0f17]/40">
+    <section id="duvidas" class="py-24 relative bg-[#090d16]/60">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#ccff00]/10 text-[#ccff00] text-xs font-bold uppercase tracking-wider mb-3 border border-[#ccff00]/20">
+                    Esclarecimentos
+                </div>
+                <h2 class="font-display text-3xl md:text-5xl font-bold text-white mb-4">
+                    Dúvidas Frequentes
+                </h2>
+                <p class="text-gray-400 max-w-xl mx-auto text-sm">
+                    Respostas claras e transparentes para as perguntas mais comuns de nossos clientes.
+                </p>
+            </div>
+
+            <div class="space-y-4" data-aos="fade-up">
+                <!-- FAQ 1 -->
+                <div class="faq-item rounded-2xl border border-white/10 bg-[#0c101a] p-5 cursor-pointer" onclick="toggleFaq(this)">
+                    <div class="flex items-center justify-between gap-4">
+                        <h4 class="font-display font-bold text-white text-base">
+                            Como funciona o atendimento presencial em Santo Antônio de Jesus (SAJ)?
+                        </h4>
+                        <span class="faq-chevron text-gray-400 transition-transform duration-300 text-lg font-bold">↓</span>
+                    </div>
+                    <div class="faq-answer pt-3 text-sm text-gray-400 leading-relaxed">
+                        Nossos técnicos realizam tanto visitas presenciais na sua empresa ou comércio em Santo Antônio de Jesus e cidades vizinhas, quanto recebimento de computadores e equipamentos em nossa bancada técnica especializada para consertos, testes e reparos eletrônicos com total segurança e garantia.
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="faq-item rounded-2xl border border-white/10 bg-[#0c101a] p-5 cursor-pointer" onclick="toggleFaq(this)">
+                    <div class="flex items-center justify-between gap-4">
+                        <h4 class="font-display font-bold text-white text-base">
+                            Não entendo nada de internet ou tecnologia. Vocês cuidam de tudo no site?
+                        </h4>
+                        <span class="faq-chevron text-gray-400 transition-transform duration-300 text-lg font-bold">↓</span>
+                    </div>
+                    <div class="faq-answer pt-3 text-sm text-gray-400 leading-relaxed">
+                        Sim, 100%! Explicamos tudo em linguagem simples e cuidamos do registro do endereço da sua empresa, hospedagem segura, visual moderno, criação de textos e botão direto para o seu WhatsApp. Você não precisa se preocupar com detalhes técnicos.
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="faq-item rounded-2xl border border-white/10 bg-[#0c101a] p-5 cursor-pointer" onclick="toggleFaq(this)">
+                    <div class="flex items-center justify-between gap-4">
+                        <h4 class="font-display font-bold text-white text-base">
+                            Qual a diferença entre uma Página Única e um Site Completo para Empresa?
+                        </h4>
+                        <span class="faq-chevron text-gray-400 transition-transform duration-300 text-lg font-bold">↓</span>
+                    </div>
+                    <div class="faq-answer pt-3 text-sm text-gray-400 leading-relaxed">
+                        A Página Única apresenta seu negócio de forma direta em uma única tela contínua, ideal para campanhas e captação rápida de novos clientes no WhatsApp. Já o Site Completo possui páginas separadas (Quem Somos, Catálogo de Produtos, Serviços, Contato). Ambos são feitos sob medida com valores a consultar conforme a sua demanda.
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="faq-item rounded-2xl border border-white/10 bg-[#0c101a] p-5 cursor-pointer" onclick="toggleFaq(this)">
+                    <div class="flex items-center justify-between gap-4">
+                        <h4 class="font-display font-bold text-white text-base">
+                            O que inclui a manutenção web mensal de R$ 150 a R$ 250/mês?
+                        </h4>
+                        <span class="faq-chevron text-gray-400 transition-transform duration-300 text-lg font-bold">↓</span>
+                    </div>
+                    <div class="faq-answer pt-3 text-sm text-gray-400 leading-relaxed">
+                        Inclui hospedagem de alta velocidade, certificado de segurança (cadeado verde SSL), backups periódicos para proteger seus dados, pequenas alterações de textos, preços ou imagens e suporte técnico constante para garantir que seu site nunca fique fora do ar.
+                    </div>
+                </div>
+
+                <!-- FAQ 5 -->
+                <div class="faq-item rounded-2xl border border-white/10 bg-[#0c101a] p-5 cursor-pointer" onclick="toggleFaq(this)">
+                    <div class="flex items-center justify-between gap-4">
+                        <h4 class="font-display font-bold text-white text-base">
+                            Vocês atendem clientes e empresas fora de Santo Antônio de Jesus?
+                        </h4>
+                        <span class="faq-chevron text-gray-400 transition-transform duration-300 text-lg font-bold">↓</span>
+                    </div>
+                    <div class="faq-answer pt-3 text-sm text-gray-400 leading-relaxed">
+                        Com certeza! Nosso foco presencial de manutenção física em bancada é em Santo Antônio de Jesus (BA), mas para desenvolvimento de sites, design de marcas e suporte técnico remoto de computadores e servidores, atendemos clientes em qualquer estado do Brasil.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="neon-divider"></div>
+
+    <!-- ========================================================================= -->
+    <!-- CONTATO & ORÇAMENTO RÁPIDO (Conversão para Técnicos Especializados)       -->
+    <!-- ========================================================================= -->
+    <section id="contato" class="py-24 relative bg-[#070a10]">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid lg:grid-cols-12 gap-12">
                 
@@ -804,28 +1197,28 @@
                         Canais de Atendimento
                     </div>
                     <h2 class="font-display text-3xl md:text-5xl font-bold text-white mb-6">
-                        Fale Direto com os Especialistas
+                        Fale com Nossos Técnicos Especializados
                     </h2>
                     <p class="text-gray-400 text-sm md:text-base leading-relaxed mb-8">
-                        Seja para esclarecer uma dúvida técnica, orçar uma nova Landing Page ou contratar um plano mensal para sua empresa, você conversa direto com a <strong class="text-white">Ana Peixoto</strong> e o <strong class="text-white">Mikaell Rocha</strong>.
+                        Seja para conserto ou manutenção de computadores em Santo Antônio de Jesus, criação de um novo site para sua empresa ou suporte de redes para seu escritório, você será atendido diretamente por nossos <strong class="text-white">técnicos especializados</strong>.
                     </p>
 
                     <div class="space-y-4 mb-8">
                         <!-- WhatsApp Card -->
                         <a href="https://wa.me/5575998729593" target="_blank" class="tech-card rounded-xl p-4 flex items-center gap-4 group">
-                            <div class="w-12 h-12 rounded-xl bg-[#ccff00] text-[#06080c] flex items-center justify-center font-bold flex-shrink-0 group-hover:scale-105 transition-transform shadow-[0_0_15px_rgba(204,255,0,0.3)]">
+                            <div class="w-12 h-12 rounded-xl bg-[#ccff00] text-[#070a10] flex items-center justify-center font-bold flex-shrink-0 group-hover:scale-105 transition-transform shadow-[0_0_15px_rgba(204,255,0,0.3)]">
                                 <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.124.557 4.122 1.54 5.874l-1.636 5.975 6.115-1.604c1.691.92 3.619 1.447 5.981 1.447 6.627 0 12-5.373 12-12s-5.373-12-12-12z"/></svg>
                             </div>
                             <div class="flex-1">
                                 <span class="text-[11px] text-[#ccff00] font-mono uppercase tracking-wider block">WhatsApp Oficial</span>
                                 <span class="text-sm font-bold text-white group-hover:text-[#ccff00] transition-colors">(75) 99872-9593</span>
                             </div>
-                            <span class="text-xs text-gray-500 group-hover:text-white transition-colors">Chamar →</span>
+                            <span class="text-xs text-gray-500 group-hover:text-white transition-colors">Conversar →</span>
                         </a>
 
                         <!-- Email Card -->
                         <div class="tech-card rounded-xl p-4 flex items-center gap-4">
-                            <div class="w-12 h-12 rounded-xl bg-[#111622] border border-white/10 text-gray-300 flex items-center justify-center flex-shrink-0">
+                            <div class="w-12 h-12 rounded-xl bg-[#131926] border border-white/10 text-gray-300 flex items-center justify-center flex-shrink-0">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                             </div>
                             <div>
@@ -836,12 +1229,12 @@
 
                         <!-- Localização Card -->
                         <div class="tech-card rounded-xl p-4 flex items-center gap-4">
-                            <div class="w-12 h-12 rounded-xl bg-[#111622] border border-white/10 text-gray-300 flex items-center justify-center flex-shrink-0">
+                            <div class="w-12 h-12 rounded-xl bg-[#131926] border border-white/10 text-gray-300 flex items-center justify-center flex-shrink-0">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
                             </div>
                             <div>
                                 <span class="text-[11px] text-gray-400 font-mono uppercase tracking-wider block">Sede & Atendimento</span>
-                                <span class="text-xs font-semibold text-white">Santo Antônio de Jesus - BA • 100% Remoto Brasil</span>
+                                <span class="text-xs font-semibold text-white">Santo Antônio de Jesus - BA (Foco principal em manutenção presencial) • Atendimento Remoto Nacional</span>
                             </div>
                         </div>
                     </div>
@@ -859,34 +1252,35 @@
                         
                         <form onsubmit="handleDirectQuoteSubmit(event)" class="space-y-5">
                             <div>
-                                <label class="text-xs font-mono uppercase text-gray-400 mb-1.5 block">Seu Nome ou Empresa *</label>
+                                <label class="text-xs font-mono uppercase text-gray-400 mb-1.5 block">Seu Nome ou Nome da Empresa *</label>
                                 <input type="text" id="express-name" required placeholder="Como podemos te chamar?" 
-                                       class="w-full bg-[#06080c] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#ccff00] transition-colors">
+                                       class="w-full bg-[#070a10] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#ccff00] transition-colors">
                             </div>
 
                             <div>
                                 <label class="text-xs font-mono uppercase text-gray-400 mb-1.5 block">Serviço Desejado *</label>
                                 <select id="express-service" 
-                                        class="w-full bg-[#06080c] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#ccff00] transition-colors">
-                                    <option value="Landing Page / Site One Page">Landing Page / Site One Page (R$ 400 - 800)</option>
-                                    <option value="Site Institucional Completo">Site Institucional Completo (R$ 1.800 - 2.800)</option>
+                                        class="w-full bg-[#070a10] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#ccff00] transition-colors">
+                                    <option value="Site para Empresa / Página Única (A consultar)">Site para Empresa / Página Única (A consultar)</option>
+                                    <option value="Site Completo com Múltiplas Páginas (A consultar)">Site Completo para sua Empresa (A consultar)</option>
+                                    <option value="Manutenção Técnica em SAJ (Computadores/Hardware)">Manutenção Técnica em SAJ (Computadores/Hardware)</option>
                                     <option value="Infraestrutura e Redes de TI">Infraestrutura e Redes de TI</option>
                                     <option value="Plano Mensal de Suporte Corporativo">Plano Mensal de Suporte Corporativo</option>
-                                    <option value="Montagem de PC Gamer / Workstation">Montagem de PC Gamer / Workstation</option>
+                                    <option value="Montagem de Computador / Trabalho">Montagem de Computador / Trabalho</option>
                                     <option value="Design de Logotipo e Identidade Visual">Design de Logotipo e Identidade Visual</option>
-                                    <option value="Outro Projeto">Outro Projeto Personalizado</option>
+                                    <option value="Outro Projeto Personalizado">Outro Projeto Personalizado</option>
                                 </select>
                             </div>
 
                             <div>
-                                <label class="text-xs font-mono uppercase text-gray-400 mb-1.5 block">Breve Descrição do Projeto</label>
+                                <label class="text-xs font-mono uppercase text-gray-400 mb-1.5 block">Breve Descrição do que Você Precisa</label>
                                 <textarea id="express-details" rows="3" placeholder="Conte brevemente o que você precisa ou qual é o prazo estimado..." 
-                                          class="w-full bg-[#06080c] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#ccff00] transition-colors resize-none"></textarea>
+                                          class="w-full bg-[#070a10] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#ccff00] transition-colors resize-none"></textarea>
                             </div>
 
                             <button type="submit" class="w-full py-4 btn-neon-solid rounded-xl text-xs uppercase tracking-wider font-bold flex items-center justify-center gap-2">
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
-                                Enviar Orçamento Formatado para o WhatsApp
+                                Enviar para os Técnicos Especializados no WhatsApp
                             </button>
                             <p class="text-[11px] text-gray-500 text-center">
                                 Seus dados serão formatados diretamente no WhatsApp oficial da Rocky Tree sem intermediários.
@@ -900,27 +1294,27 @@
     </section>
 
     <!-- ========================================================================= -->
-    <!-- FOOTER INSTITUCIONAL                                                      -->
+    <!-- FOOTER PRINCIPAL                                                          -->
     <!-- ========================================================================= -->
-    <footer class="bg-[#040608] border-t border-white/5 pt-16 pb-12">
+    <footer class="bg-[#05070c] border-t border-white/5 pt-16 pb-12">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid md:grid-cols-4 gap-10 mb-12">
                 
                 <div class="md:col-span-2">
                     <div class="flex items-center gap-3 mb-4">
-                        <div class="w-9 h-9 rounded-lg bg-[#111622] border border-white/10 flex items-center justify-center">
+                        <div class="w-9 h-9 rounded-lg bg-[#131926] border border-white/10 flex items-center justify-center">
                             <img src="RockyTreeLogoNeo.png" alt="Rocky Tree" class="w-6 h-6 object-contain">
                         </div>
                         <span class="font-display font-bold text-lg text-white">Rocky Tree Technologies</span>
                     </div>
                     <p class="text-xs text-gray-400 max-w-sm leading-relaxed mb-6">
-                        Soluções sólidas em tecnologia. Do hardware à nuvem, construímos e sustentamos a fundação digital do seu negócio.
+                        Soluções sólidas em tecnologia. Do hardware à web, construímos e sustentamos a fundação operacional do seu negócio.
                     </p>
                     <div class="flex items-center gap-3">
-                        <a href="https://wa.me/5575998729593" target="_blank" class="w-9 h-9 rounded-lg bg-[#111622] border border-white/10 flex items-center justify-center text-gray-400 hover:text-[#ccff00] hover:border-[#ccff00] transition-colors" aria-label="WhatsApp">
+                        <a href="https://wa.me/5575998729593" target="_blank" class="w-9 h-9 rounded-lg bg-[#131926] border border-white/10 flex items-center justify-center text-gray-400 hover:text-[#ccff00] hover:border-[#ccff00] transition-colors" aria-label="WhatsApp">
                             <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.124.557 4.122 1.54 5.874l-1.636 5.975 6.115-1.604c1.691.92 3.619 1.447 5.981 1.447 6.627 0 12-5.373 12-12s-5.373-12-12-12z"/></svg>
                         </a>
-                        <a href="mailto:rockytreetechnologies@gmail.com" class="w-9 h-9 rounded-lg bg-[#111622] border border-white/10 flex items-center justify-center text-gray-400 hover:text-[#ccff00] hover:border-[#ccff00] transition-colors" aria-label="E-mail">
+                        <a href="mailto:rockytreetechnologies@gmail.com" class="w-9 h-9 rounded-lg bg-[#131926] border border-white/10 flex items-center justify-center text-gray-400 hover:text-[#ccff00] hover:border-[#ccff00] transition-colors" aria-label="E-mail">
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                         </a>
                     </div>
@@ -931,21 +1325,23 @@
                     <ul class="space-y-2 text-xs text-gray-400">
                         <li><a href="#sobre" class="hover:text-[#ccff00] transition-colors">Sobre Nós</a></li>
                         <li><a href="#servicos" class="hover:text-[#ccff00] transition-colors">Serviços Oferecidos</a></li>
+                        <li><a href="#simulador" class="hover:text-[#ccff00] transition-colors">Simulador de Atendimento</a></li>
                         <li><a href="#portfolio" class="hover:text-[#ccff00] transition-colors">Portfólio de Cases</a></li>
                         <li><a href="#planos" class="hover:text-[#ccff00] transition-colors">Modelos & Assinaturas</a></li>
+                        <li><a href="#duvidas" class="hover:text-[#ccff00] transition-colors">Dúvidas Frequentes</a></li>
                         <li><a href="#contato" class="hover:text-[#ccff00] transition-colors">Orçamento Direto</a></li>
                     </ul>
                 </div>
 
                 <div>
-                    <h5 class="text-white font-bold text-xs uppercase tracking-wider mb-4">Liderança Técnica</h5>
+                    <h5 class="text-white font-bold text-xs uppercase tracking-wider mb-4">Suporte & Atendimento</h5>
                     <p class="text-xs text-gray-400 leading-relaxed mb-3">
-                        <strong class="text-white">Ana Peixoto</strong><br>
-                        Tecnologia & Redes
+                        <strong class="text-white">Foco Principal em SAJ</strong><br>
+                        Atendimento presencial para manutenção e computadores em Santo Antônio de Jesus e região.
                     </p>
                     <p class="text-xs text-gray-400 leading-relaxed">
-                        <strong class="text-white">Mikaell Rocha</strong><br>
-                        Infraestrutura & Desenvolvimento
+                        <strong class="text-white">Técnicos Especializados</strong><br>
+                        Suporte remoto ágil para empresas em todo o Brasil.
                     </p>
                 </div>
 
@@ -961,17 +1357,17 @@
     </footer>
 
     <!-- ========================================================================= -->
-    <!-- TREEBOT IA (Assistente Virtual em Dark UI + Neon Accent)                  -->
+    <!-- TREEBOT IA (Assistente Virtual Inteligente)                               -->
     <!-- ========================================================================= -->
     <div class="fixed bottom-6 right-6 z-[100] flex flex-col items-end">
         
         <!-- Janela do Chat -->
-        <div id="chatbot-window" class="hidden w-80 sm:w-96 bg-[#0b0f17]/95 border border-[#ccff00]/30 rounded-2xl shadow-[0_0_40px_rgba(204,255,0,0.15)] mb-4 overflow-hidden flex-col backdrop-blur-2xl transition-all origin-bottom-right">
+        <div id="chatbot-window" class="hidden w-80 sm:w-96 bg-[#0c101a]/95 border border-[#ccff00]/30 rounded-2xl shadow-[0_0_40px_rgba(204,255,0,0.15)] mb-4 overflow-hidden flex-col backdrop-blur-2xl transition-all origin-bottom-right">
             
             <!-- Header do Chatbot -->
-            <div class="bg-[#111622] border-b border-white/10 p-3.5 flex items-center justify-between">
+            <div class="bg-[#131926] border-b border-white/10 p-3.5 flex items-center justify-between">
                 <div class="flex items-center gap-3">
-                    <div class="w-8 h-8 rounded-full bg-[#06080c] border border-[#ccff00] flex items-center justify-center text-[#ccff00] shadow-[0_0_10px_rgba(204,255,0,0.25)]">
+                    <div class="w-8 h-8 rounded-full bg-[#070a10] border border-[#ccff00] flex items-center justify-center text-[#ccff00] shadow-[0_0_10px_rgba(204,255,0,0.25)]">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
                     </div>
                     <div>
@@ -991,42 +1387,42 @@
             
             <!-- Mensagens -->
             <div id="chat-messages" class="p-4 h-72 overflow-y-auto flex flex-col gap-3 text-xs md:text-sm scroll-smooth">
-                <div class="bg-[#111622] border border-white/10 rounded-2xl rounded-tl-xs p-3.5 text-gray-200 max-w-[88%] shadow-sm leading-relaxed">
+                <div class="bg-[#131926] border border-white/10 rounded-2xl rounded-tl-xs p-3.5 text-gray-200 max-w-[88%] shadow-sm leading-relaxed">
                     Olá! Sou o <strong class="text-white">TreeBot IA</strong> 🌲 da Rocky Tree Technologies.
                     <br><br>
-                    Estou aqui para esclarecer dúvidas sobre nossos serviços de desenvolvimento, infraestrutura ou agendar seu atendimento oficial no WhatsApp.
+                    Estou aqui para esclarecer dúvidas sobre nossos serviços de manutenção em SAJ, criação de sites para empresas, infraestrutura ou agendar seu atendimento oficial no WhatsApp.
                     <br><br>
-                    Como posso ajudar o seu projeto hoje?
+                    Como posso ajudar você hoje?
                 </div>
             </div>
             
             <!-- Atalhos Rápidos (Pills) -->
-            <div class="px-3 py-2 bg-[#06080c]/80 border-t border-white/5 flex gap-1.5 overflow-x-auto">
-                <button onclick="sendTreebotQuickMessage('Quanto custa uma Landing Page?')" class="px-2.5 py-1 rounded-full bg-white/5 hover:bg-[#ccff00]/20 text-gray-300 hover:text-[#ccff00] text-[11px] font-medium whitespace-nowrap transition-colors border border-white/10">
-                    💰 Preço Site/LP
+            <div class="px-3 py-2 bg-[#070a10]/80 border-t border-white/5 flex gap-1.5 overflow-x-auto">
+                <button onclick="sendTreebotQuickMessage('Quanto custa uma Landing Page ou Site?')" class="px-2.5 py-1 rounded-full bg-white/5 hover:bg-[#ccff00]/20 text-gray-300 hover:text-[#ccff00] text-[11px] font-medium whitespace-nowrap transition-colors border border-white/10">
+                    💰 Preço Site
                 </button>
-                <button onclick="sendTreebotQuickMessage('Como funciona o suporte de TI para empresas?')" class="px-2.5 py-1 rounded-full bg-white/5 hover:bg-[#ccff00]/20 text-gray-300 hover:text-[#ccff00] text-[11px] font-medium whitespace-nowrap transition-colors border border-white/10">
-                    🖥️ Suporte TI
+                <button onclick="sendTreebotQuickMessage('Como funciona a manutenção de computadores em SAJ?')" class="px-2.5 py-1 rounded-full bg-white/5 hover:bg-[#ccff00]/20 text-gray-300 hover:text-[#ccff00] text-[11px] font-medium whitespace-nowrap transition-colors border border-white/10">
+                    🔧 Manutenção SAJ
                 </button>
-                <button onclick="sendTreebotQuickMessage('Gostaria de falar direto no WhatsApp com a Ana e o Mikaell')" class="px-2.5 py-1 rounded-full bg-white/5 hover:bg-[#ccff00]/20 text-gray-300 hover:text-[#ccff00] text-[11px] font-medium whitespace-nowrap transition-colors border border-white/10">
-                    💬 WhatsApp
+                <button onclick="sendTreebotQuickMessage('Gostaria de falar com os técnicos especializados no WhatsApp')" class="px-2.5 py-1 rounded-full bg-white/5 hover:bg-[#ccff00]/20 text-gray-300 hover:text-[#ccff00] text-[11px] font-medium whitespace-nowrap transition-colors border border-white/10">
+                    💬 Falar com Técnicos
                 </button>
             </div>
 
             <!-- Input de Mensagem -->
-            <div class="p-3 bg-[#06080c] border-t border-white/10 flex items-center gap-2">
+            <div class="p-3 bg-[#070a10] border-t border-white/10 flex items-center gap-2">
                 <input type="text" id="treebot-input" placeholder="Digite sua mensagem ou dúvida..." 
-                       class="flex-1 bg-[#111622] border border-white/10 rounded-xl px-3.5 py-2 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-[#ccff00] transition-colors"
+                       class="flex-1 bg-[#131926] border border-white/10 rounded-xl px-3.5 py-2 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-[#ccff00] transition-colors"
                        onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();handleTreebotSend();}">
                 <button id="treebot-send-btn" onclick="handleTreebotSend()"
-                        class="w-9 h-9 rounded-xl bg-[#ccff00] hover:bg-white text-[#06080c] flex items-center justify-center font-bold transition-all shadow-[0_0_15px_rgba(204,255,0,0.3)]" aria-label="Enviar">
+                        class="w-9 h-9 rounded-xl bg-[#ccff00] hover:bg-white text-[#070a10] flex items-center justify-center font-bold transition-all shadow-[0_0_15px_rgba(204,255,0,0.3)]" aria-label="Enviar">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
                 </button>
             </div>
         </div>
         
         <!-- Botão Flutuante de Abertura -->
-        <button onclick="toggleChat()" class="w-14 h-14 bg-[#ccff00] text-[#06080c] rounded-full shadow-[0_0_25px_rgba(204,255,0,0.4)] hover:scale-110 transition-transform flex items-center justify-center border-2 border-[#ccff00] group z-50" aria-label="Abrir Assistente">
+        <button onclick="toggleChat()" class="w-14 h-14 bg-[#ccff00] text-[#070a10] rounded-full shadow-[0_0_25px_rgba(204,255,0,0.4)] hover:scale-110 transition-transform flex items-center justify-center border-2 border-[#ccff00] group z-50" aria-label="Abrir Assistente">
             <svg id="chat-icon-open" class="w-7 h-7 block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path></svg>
             <svg id="chat-icon-close" class="w-7 h-7 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
         </button>
@@ -1037,12 +1433,12 @@
     <!-- ========================================================================= -->
     <div id="service-modal" class="modal fixed inset-0 z-[110] flex items-center justify-center p-4 bg-black/85">
         <div class="absolute inset-0 cursor-pointer" onclick="closeServiceModal()"></div>
-        <div class="modal-content relative w-full max-w-2xl bg-[#0b0f17] border border-[#ccff00]/30 rounded-2xl p-6 sm:p-8 shadow-[0_0_50px_rgba(204,255,0,0.15)] max-h-[90vh] overflow-y-auto">
+        <div class="modal-content relative w-full max-w-2xl bg-[#0c101a] border border-[#ccff00]/30 rounded-2xl p-6 sm:p-8 shadow-[0_0_50px_rgba(204,255,0,0.15)] max-h-[90vh] overflow-y-auto">
             <button onclick="closeServiceModal()" class="absolute top-5 right-5 text-gray-400 hover:text-white bg-white/5 hover:bg-white/10 rounded-full p-2 transition-colors z-10" aria-label="Fechar Modal">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
             </button>
             
-            <div id="modal-icon" class="w-14 h-14 rounded-xl bg-[#111622] border border-[#ccff00]/30 flex items-center justify-center mb-5 text-[#ccff00]">
+            <div id="modal-icon" class="w-14 h-14 rounded-xl bg-[#131926] border border-[#ccff00]/30 flex items-center justify-center mb-5 text-[#ccff00]">
                 <!-- Injetado via JS -->
             </div>
             <h3 id="modal-title" class="font-display text-2xl sm:text-3xl font-bold text-white mb-3">Título</h3>
@@ -1051,7 +1447,7 @@
             </div>
             
             <div class="mt-8 pt-6 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4">
-                <span class="text-xs text-gray-400">Atendimento oficial com Ana Peixoto & Mikaell Rocha</span>
+                <span class="text-xs text-gray-400">Atendimento direto com nossos técnicos especializados</span>
                 <a href="https://wa.me/5575998729593" target="_blank" onclick="closeServiceModal()" class="w-full sm:w-auto px-6 py-3 btn-neon-solid rounded-xl font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2">
                     <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.124.557 4.122 1.54 5.874l-1.636 5.975 6.115-1.604c1.691.92 3.619 1.447 5.981 1.447 6.627 0 12-5.373 12-12s-5.373-12-12-12z"/></svg>
                     Falar no WhatsApp
@@ -1061,9 +1457,7 @@
     </div>
 
     <!-- Scripts Externos -->
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
     
     <script>
         // Init AOS
@@ -1073,38 +1467,143 @@
             offset: 80
         });
 
-        // Configuração das Partículas com Acento Neon Lime
-        particlesJS('particles-js', {
-            "particles": {
-                "number": { "value": 50, "density": { "enable": true, "value_area": 850 } },
-                "color": { "value": "#ccff00" },
-                "shape": { "type": "circle" },
-                "opacity": { "value": 0.25, "random": false },
-                "size": { "value": 2.5, "random": true },
-                "line_linked": { "enable": true, "distance": 140, "color": "#ccff00", "opacity": 0.12, "width": 1 },
-                "move": { "enable": true, "speed": 1.6, "direction": "none", "random": false, "out_mode": "out" }
-            },
-            "interactivity": {
-                "detect_on": "canvas",
-                "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" }, "resize": true },
-                "modes": { "grab": { "distance": 130, "line_linked": { "opacity": 0.6 } } }
-            },
-            "retina_detect": true
+        // Interactive Viewport Tech Spotlight Tracking
+        window.addEventListener('mousemove', (e) => {
+            const x = (e.clientX / window.innerWidth) * 100;
+            const y = (e.clientY / window.innerHeight) * 100;
+            document.documentElement.style.setProperty('--spotlight-x', `${x}%`);
+            document.documentElement.style.setProperty('--spotlight-y', `${y}%`);
         });
 
-        // Efeito de Digitação
-        const textToType = "Soluções Sólidas em Tecnologia.";
-        const typeContainer = document.getElementById('typed-text');
-        let typeIndex = 0;
+        // Magnetic Spotlight Tracker para .tech-card (efeito ativo e fluido ao passar o cursor)
+        function initMagneticSpotlight() {
+            const cards = document.querySelectorAll('.tech-card');
+            cards.forEach(card => {
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    card.style.setProperty('--mouse-x', `${x}px`);
+                    card.style.setProperty('--mouse-y', `${y}px`);
+                });
+            });
+        }
+        initMagneticSpotlight();
 
-        function typeWriter() {
-            if (typeContainer && typeIndex < textToType.length) {
-                typeContainer.innerHTML += textToType.charAt(typeIndex);
-                typeIndex++;
-                setTimeout(typeWriter, 85);
+        // Interactive Button Ripple Effect
+        document.querySelectorAll('.btn-neon-solid, .btn-neon-outline').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                const rect = this.getBoundingClientRect();
+                const circle = document.createElement('span');
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const size = Math.max(rect.width, rect.height) * 2;
+                circle.style.width = circle.style.height = `${size}px`;
+                circle.style.left = `${x - size / 2}px`;
+                circle.style.top = `${y - size / 2}px`;
+                circle.classList.add('btn-ripple');
+                this.appendChild(circle);
+                setTimeout(() => circle.remove(), 600);
+            });
+        });
+
+        // Dynamic Animated Number Counter
+        function initCounters() {
+            const counters = document.querySelectorAll('.counter');
+            if (counters.length > 0 && 'IntersectionObserver' in window) {
+                const observer = new IntersectionObserver((entries, obs) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const target = parseInt(entry.target.getAttribute('data-target') || '100', 10);
+                            const suffix = entry.target.getAttribute('data-suffix') || '';
+                            let current = 0;
+                            const step = Math.max(1, Math.ceil(target / 30));
+                            const interval = setInterval(() => {
+                                current += step;
+                                if (current >= target) {
+                                    current = target;
+                                    clearInterval(interval);
+                                }
+                                entry.target.textContent = current + suffix;
+                            }, 30);
+                            obs.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.3 });
+                counters.forEach(c => observer.observe(c));
             }
         }
-        setTimeout(typeWriter, 400);
+        initCounters();
+
+        // Interactive Simulator Logic
+        const selectedSimServices = new Set();
+        function toggleSimOption(element, serviceName) {
+            if (selectedSimServices.has(serviceName)) {
+                selectedSimServices.delete(serviceName);
+                element.classList.remove('selected');
+            } else {
+                selectedSimServices.add(serviceName);
+                element.classList.add('selected');
+            }
+            updateSimSummary();
+        }
+
+        function updateSimSummary() {
+            const summaryText = document.getElementById('sim-summary-text');
+            const locationHint = document.getElementById('sim-location-hint');
+            const whatsappBtn = document.getElementById('sim-whatsapp-btn');
+
+            if (selectedSimServices.size === 0) {
+                summaryText.textContent = "Nenhum serviço selecionado ainda. Clique nas opções acima para montar seu pedido.";
+                locationHint.textContent = "Atendimento presencial focado em Santo Antônio de Jesus (SAJ) & suporte remoto para todo o Brasil.";
+                whatsappBtn.href = "https://wa.me/5575998729593?text=" + encodeURIComponent("Olá, equipe técnica da Rocky Tree! Gostaria de tirar dúvidas sobre os serviços.");
+                return;
+            }
+
+            const servicesArray = Array.from(selectedSimServices);
+            summaryText.textContent = `${servicesArray.length} serviço(s) selecionado(s): ${servicesArray.join(" • ")}`;
+
+            const hasSAJ = servicesArray.some(s => s.includes("SAJ") || s.includes("Hardware"));
+            if (hasSAJ) {
+                locationHint.innerHTML = `<span class="text-[#ccff00] font-semibold">📍 Foco Presencial em Santo Antônio de Jesus (SAJ)</span> com visita técnica ou atendimento em bancada especializada.`;
+            } else {
+                locationHint.innerHTML = `<span class="text-white font-semibold">🌐 Atendimento Remoto Ágil</span> ou desenvolvimento web disponível para todo o Brasil.`;
+            }
+
+            let msg = `Olá, equipe de técnicos especializados da Rocky Tree!\n\nUtilizei o simulador do site e selecionei as seguintes necessidades:\n`;
+            servicesArray.forEach(s => {
+                msg += `• *${s}*\n`;
+            });
+            msg += `\nGostaria de mais detalhes sobre valores sob medida, disponibilidade e prazos.`;
+            whatsappBtn.href = `https://wa.me/5575998729593?text=${encodeURIComponent(msg)}`;
+        }
+
+        // Interactive Portfolio Category Filter
+        function filterPortfolio(category, btnElement) {
+            document.querySelectorAll('.portfolio-tab').forEach(t => t.classList.remove('active'));
+            if (btnElement) btnElement.classList.add('active');
+
+            const cards = document.querySelectorAll('.portfolio-card');
+            cards.forEach(card => {
+                const cardCategory = card.getAttribute('data-category');
+                if (category === 'all' || cardCategory === category) {
+                    card.classList.remove('portfolio-hidden');
+                } else {
+                    card.classList.add('portfolio-hidden');
+                }
+            });
+        }
+
+        // Interactive FAQ Accordion
+        function toggleFaq(element) {
+            const isActive = element.classList.contains('active');
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            if (!isActive) {
+                element.classList.add('active');
+            }
+        }
 
         // Menu Mobile Toggle
         const mobileBtn = document.getElementById('mobile-menu-btn');
@@ -1125,12 +1624,12 @@
             const service = document.getElementById('express-service').value;
             const details = document.getElementById('express-details').value.trim();
 
-            let msg = `Olá, equipe Rocky Tree! Meu nome é *${name}*.\n\n`;
+            let msg = `Olá, equipe de técnicos especializados da Rocky Tree! Meu nome é *${name}*.\n\n`;
             msg += `Gostaria de solicitar um orçamento para: *${service}*.\n`;
             if (details) {
-                msg += `\nDetalhes do meu projeto:\n_${details}_\n`;
+                msg += `\nDetalhes do meu pedido:\n_${details}_\n`;
             }
-            msg += `\nPoderiam me enviar mais informações sobre prazos e disponibilidade?`;
+            msg += `\nPoderiam me enviar mais informações sobre disponibilidade e prazos?`;
 
             const encoded = encodeURIComponent(msg);
             window.open(`https://wa.me/5575998729593?text=${encoded}`, '_blank');
@@ -1139,34 +1638,33 @@
         // Dados completos dos serviços para o Modal
         const servicesData = {
             web: {
-                title: "Desenvolvimento Web & Landing Pages",
+                title: "Criação de Sites para Empresas & Páginas de Apresentação",
                 icon: `<svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>`,
                 content: `
-                    <p class="text-sm text-gray-300">Criamos sites focados em estética impecável (Dark UI), velocidade extrema e conversão direta via WhatsApp e integrações.</p>
+                    <p class="text-sm text-gray-300">Desenvolvemos sites modernos, rápidos e fáceis de navegar no celular ou computador, preparados para receber clientes diretamente no WhatsApp da sua empresa.</p>
                     <div class="mt-5 space-y-3">
-                        <div class="bg-[#06080c] p-4 rounded-xl border border-white/10 flex flex-col sm:flex-row justify-between sm:items-center gap-2">
+                        <div class="bg-[#070a10] p-4 rounded-xl border border-white/10 flex flex-col sm:flex-row justify-between sm:items-center gap-2">
                             <div>
-                                <h5 class="text-white font-bold text-sm">Landing Page / Página Única (One Page)</h5>
-                                <p class="text-xs text-gray-400">Ideal para portfólios, apresentação de empresa, produto ou serviços.</p>
-                                <span class="text-[10px] text-[#ccff00] font-semibold mt-1 inline-block">50% OFF para os primeiros clientes no lançamento</span>
+                                <h5 class="text-white font-bold text-sm">Página Única / Apresentação Rápida</h5>
+                                <p class="text-xs text-gray-400">Ideal para divulgar sua empresa, produtos ou serviços de forma direta e sem complicações.</p>
                             </div>
                             <div class="sm:text-right whitespace-nowrap">
-                                <span class="text-base font-bold text-[#ccff00]">R$ 400 <span class="text-xs font-normal text-gray-400">a</span> 800</span>
+                                <span class="text-base font-bold text-[#ccff00]">A consultar</span>
                             </div>
                         </div>
-                        <div class="bg-[#06080c] p-4 rounded-xl border border-white/10 flex flex-col sm:flex-row justify-between sm:items-center gap-2">
+                        <div class="bg-[#070a10] p-4 rounded-xl border border-white/10 flex flex-col sm:flex-row justify-between sm:items-center gap-2">
                             <div>
-                                <h5 class="text-white font-bold text-sm">Site Institucional Completo</h5>
-                                <p class="text-xs text-gray-400">Estrutura corporativa, integração de CRM, modais interativos e SEO técnico.</p>
+                                <h5 class="text-white font-bold text-sm">Site Completo para sua Empresa</h5>
+                                <p class="text-xs text-gray-400">Estrutura com múltiplas páginas para apresentar sua história, catálogo, localização e contatos.</p>
                             </div>
                             <div class="sm:text-right whitespace-nowrap">
-                                <span class="text-base font-bold text-[#ccff00]">R$ 1.800 <span class="text-xs font-normal text-gray-400">a</span> 2.800</span>
+                                <span class="text-base font-bold text-[#ccff00]">A consultar</span>
                             </div>
                         </div>
-                        <div class="bg-[#06080c] p-4 rounded-xl border-l-2 border-l-[#ccff00] border-t border-t-white/10 border-r border-r-white/10 border-b border-b-white/10 flex flex-col sm:flex-row justify-between sm:items-center gap-2">
+                        <div class="bg-[#070a10] p-4 rounded-xl border-l-2 border-l-[#ccff00] border-t border-t-white/10 border-r border-r-white/10 border-b border-b-white/10 flex flex-col sm:flex-row justify-between sm:items-center gap-2">
                             <div>
                                 <h5 class="text-white font-bold text-sm">Manutenção e Suporte Mensal Web</h5>
-                                <p class="text-xs text-gray-400">Hospedagem, certificado SSL, backups periódicos e atualizações.</p>
+                                <p class="text-xs text-gray-400">Hospedagem, certificado de segurança SSL, backups periódicos e atualizações contínuas.</p>
                             </div>
                             <div class="sm:text-right whitespace-nowrap">
                                 <span class="text-base font-bold text-[#ccff00]">R$ 150 <span class="text-xs font-normal text-gray-400">a</span> 250<span class="text-[10px] text-gray-400">/mês</span></span>
@@ -1179,18 +1677,18 @@
                 title: "Infraestrutura & Redes Corporativas",
                 icon: `<svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>`,
                 content: `
-                    <p class="text-sm text-gray-300">Conectividade e estabilidade corporativa. Projetamos redes cabeadas estruturadas, pontos de acesso Wi-Fi profissionais e servidores seguros.</p>
+                    <p class="text-sm text-gray-300">Conectividade e estabilidade corporativa. Projetamos redes cabeadas estruturadas, Wi-Fi corporativo de longo alcance e servidores seguros com atendimento em Santo Antônio de Jesus (SAJ) e suporte remoto.</p>
                     <div class="mt-5 space-y-3">
-                        <div class="bg-[#06080c] p-4 rounded-xl border border-white/10 flex flex-col sm:flex-row justify-between sm:items-center gap-2">
+                        <div class="bg-[#070a10] p-4 rounded-xl border border-white/10 flex flex-col sm:flex-row justify-between sm:items-center gap-2">
                             <div>
                                 <h5 class="text-white font-bold text-sm">Chamado Técnico Avulso</h5>
-                                <p class="text-xs text-gray-400">Atendimento presencial (SAJ) ou remoto para falhas de rede, lentidão e configurações.</p>
+                                <p class="text-xs text-gray-400">Atendimento presencial em Santo Antônio de Jesus (SAJ) ou remoto para falhas e configurações.</p>
                             </div>
                             <div class="sm:text-right whitespace-nowrap">
                                 <span class="text-base font-bold text-[#ccff00]">R$ 120 <span class="text-xs font-normal text-gray-400">a</span> 180</span>
                             </div>
                         </div>
-                        <div class="bg-[#06080c] p-4 rounded-xl border-l-2 border-l-[#ccff00] border-t border-t-white/10 border-r border-r-white/10 border-b border-b-white/10 flex flex-col sm:flex-row justify-between sm:items-center gap-2">
+                        <div class="bg-[#070a10] p-4 rounded-xl border-l-2 border-l-[#ccff00] border-t border-t-white/10 border-r border-r-white/10 border-b border-b-white/10 flex flex-col sm:flex-row justify-between sm:items-center gap-2">
                             <div>
                                 <h5 class="text-white font-bold text-sm">Plano Básico de Suporte (Até 5 computadores)</h5>
                                 <p class="text-xs text-gray-400">Suporte remoto prioritário e visita presencial preventiva e corretiva mensal.</p>
@@ -1199,7 +1697,7 @@
                                 <span class="text-base font-bold text-[#ccff00]">R$ 350 <span class="text-xs font-normal text-gray-400">a</span> 500<span class="text-[10px] text-gray-400">/mês</span></span>
                             </div>
                         </div>
-                        <div class="bg-[#06080c] p-4 rounded-xl border-l-2 border-l-[#ccff00] border-t border-t-white/10 border-r border-r-white/10 border-b border-b-white/10 flex flex-col sm:flex-row justify-between sm:items-center gap-2">
+                        <div class="bg-[#070a10] p-4 rounded-xl border-l-2 border-l-[#ccff00] border-t border-t-white/10 border-r border-r-white/10 border-b border-b-white/10 flex flex-col sm:flex-row justify-between sm:items-center gap-2">
                             <div>
                                 <h5 class="text-white font-bold text-sm">Plano Intermediário (6 a 12 computadores)</h5>
                                 <p class="text-xs text-gray-400">Gestão contínua de roteadores, Wi-Fi corporativo e segurança para empresas e lojas.</p>
@@ -1212,43 +1710,46 @@
                 `
             },
             hardware: {
-                title: "Hardware & Reparos Especializados",
+                title: "Hardware & Manutenção Técnica em SAJ",
                 icon: `<svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path></svg>`,
                 content: `
-                    <p class="text-sm text-gray-300">Montagem precisa, testes de estabilidade térmica e diagnósticos avançados em microeletrônica.</p>
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#ccff00]/10 text-[#ccff00] text-xs font-semibold uppercase tracking-wider mb-2 border border-[#ccff00]/20">
+                        Foco Principal: Manutenção Presencial em Santo Antônio de Jesus (SAJ)
+                    </div>
+                    <p class="text-sm text-gray-300">Diagnósticos precisos, conserto de computadores e notebooks, substituição de peças, montagem e reparos eletrônicos com bancada especializada.</p>
                     <div class="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-3">
-                        <div class="bg-[#06080c] p-3.5 rounded-xl border border-white/10">
+                        <div class="bg-[#070a10] p-3.5 rounded-xl border border-white/10">
                             <div class="flex justify-between items-center mb-1">
                                 <h5 class="text-white font-bold text-xs">Formatação PC/Notebook</h5>
                                 <span class="text-xs font-bold text-[#ccff00]">R$ 100 - 150</span>
                             </div>
                             <p class="text-[11px] text-gray-400">Instalação limpa do Windows/Linux e drivers originais.</p>
                         </div>
-                        <div class="bg-[#06080c] p-3.5 rounded-xl border border-white/10">
+                        <div class="bg-[#070a10] p-3.5 rounded-xl border border-white/10">
                             <div class="flex justify-between items-center mb-1">
                                 <h5 class="text-white font-bold text-xs">Limpeza & Pasta Térmica</h5>
                                 <span class="text-xs font-bold text-[#ccff00]">R$ 150 - 250</span>
                             </div>
                             <p class="text-[11px] text-gray-400">Desmontagem completa, limpeza e pasta de alta condutividade.</p>
                         </div>
-                        <div class="bg-[#06080c] p-3.5 rounded-xl border border-white/10">
+                        <div class="bg-[#070a10] p-3.5 rounded-xl border border-white/10">
                             <div class="flex justify-between items-center mb-1">
-                                <h5 class="text-white font-bold text-xs">Microsolda em Placas</h5>
+                                <h5 class="text-white font-bold text-xs">Reparo Eletrônico em Placas</h5>
                                 <span class="text-xs font-bold text-[#ccff00]">R$ 250 - 500</span>
                             </div>
-                            <p class="text-[11px] text-gray-400">Reparo de trilhas, conectores HDMI e capacitores em curto.</p>
+                            <p class="text-[11px] text-gray-400">Reparo de circuitos, conectores HDMI/USB e capacitores em curto.</p>
                         </div>
-                        <div class="bg-[#06080c] p-3.5 rounded-xl border border-white/10">
+                        <div class="bg-[#070a10] p-3.5 rounded-xl border border-white/10">
                             <div class="flex justify-between items-center mb-1">
-                                <h5 class="text-white font-bold text-xs">Desbloqueio / Unlock</h5>
-                                <span class="text-xs font-bold text-[#ccff00]">R$ 150 - 300</span>
+                                <h5 class="text-white font-bold text-xs">Upgrade de SSD / Memória</h5>
+                                <span class="text-xs font-bold text-[#ccff00]">R$ 100 - 200</span>
                             </div>
-                            <p class="text-[11px] text-gray-400">Otimização de sistemas e mídia digital.</p>
+                            <p class="text-[11px] text-gray-400">Acelere seu computador antigo com armazenamento rápido.</p>
                         </div>
-                        <div class="bg-[#06080c] p-4 rounded-xl border border-[#ccff00]/30 sm:col-span-2 flex flex-col sm:flex-row justify-between sm:items-center gap-2">
+                        <div class="bg-[#070a10] p-4 rounded-xl border border-[#ccff00]/30 sm:col-span-2 flex flex-col sm:flex-row justify-between sm:items-center gap-2">
                             <div>
-                                <h5 class="text-white font-bold text-xs">Montagem de PC Gamer / Workstation Completa</h5>
-                                <p class="text-[11px] text-gray-400">Montagem física, cable management de precisão e testes de stress.</p>
+                                <h5 class="text-white font-bold text-xs">Montagem de PC Gamer / Trabalho Completa</h5>
+                                <p class="text-[11px] text-gray-400">Montagem física, organização impecável de cabos e testes de estabilidade.</p>
                             </div>
                             <span class="text-sm font-bold text-[#ccff00]">R$ 200 a 350 (Mão de obra)</span>
                         </div>
@@ -1256,26 +1757,26 @@
                 `
             },
             design: {
-                title: "Design & Identidade Visual Tech",
+                title: "Design & Identidade Visual",
                 icon: `<svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path></svg>`,
                 content: `
-                    <p class="text-sm text-gray-300">Posicionamento de marca moderno. Criamos logotipos com apelo tecnológico, tipografia geométrica e manuais visuais.</p>
+                    <p class="text-sm text-gray-300">Posicionamento de marca moderno. Criamos logotipos vetoriais, manuais de identidade e peças visuais completas para fortalecer sua presença.</p>
                     <div class="mt-5 space-y-3">
-                        <div class="bg-[#06080c] p-4 rounded-xl border border-white/10 flex flex-col sm:flex-row justify-between sm:items-center gap-2">
+                        <div class="bg-[#070a10] p-4 rounded-xl border border-white/10 flex flex-col sm:flex-row justify-between sm:items-center gap-2">
                             <div>
-                                <h5 class="text-white font-bold text-sm">Criação de Logotipo Vetorial</h5>
+                                <h5 class="text-white font-bold text-sm">Criação de Logotipo Profissional</h5>
                                 <p class="text-xs text-gray-400">Desenvolvimento com até 3 propostas conceituais e arquivos finais em vetor.</p>
                             </div>
                             <span class="text-base font-bold text-[#ccff00]">R$ 150 <span class="text-xs font-normal text-gray-400">a</span> 200</span>
                         </div>
-                        <div class="bg-[#06080c] p-4 rounded-xl border-l-2 border-l-[#ccff00] border-t border-t-white/10 border-r border-r-white/10 border-b border-b-white/10 flex flex-col sm:flex-row justify-between sm:items-center gap-2">
+                        <div class="bg-[#070a10] p-4 rounded-xl border-l-2 border-l-[#ccff00] border-t border-t-white/10 border-r border-r-white/10 border-b border-b-white/10 flex flex-col sm:flex-row justify-between sm:items-center gap-2">
                             <div>
                                 <h5 class="text-white font-bold text-sm">Identidade Visual Completa</h5>
                                 <p class="text-xs text-gray-400">Logotipo, manual de marca, paleta de cores, tipografia e aplicações digitais.</p>
                             </div>
                             <span class="text-base font-bold text-[#ccff00]">R$ 200 <span class="text-xs font-normal text-gray-400">a</span> 500</span>
                         </div>
-                        <div class="bg-[#06080c] p-4 rounded-xl border border-white/10 flex flex-col sm:flex-row justify-between sm:items-center gap-2">
+                        <div class="bg-[#070a10] p-4 rounded-xl border border-white/10 flex flex-col sm:flex-row justify-between sm:items-center gap-2">
                             <div>
                                 <h5 class="text-white font-bold text-sm">Pacote Mensal de Artes Digitais</h5>
                                 <p class="text-xs text-gray-400">Banners, posts para redes sociais e materiais gráficos promocionais.</p>
@@ -1291,21 +1792,21 @@
                 content: `
                     <p class="text-sm text-gray-300">Garantia contínua de estabilidade para empresas e escritórios que dependem de tecnologia diária.</p>
                     <div class="mt-5 space-y-3">
-                        <div class="bg-[#06080c] p-4 rounded-xl border-l-2 border-l-[#ccff00] border-t border-t-white/10 border-r border-r-white/10 border-b border-b-white/10 flex justify-between items-center">
+                        <div class="bg-[#070a10] p-4 rounded-xl border-l-2 border-l-[#ccff00] border-t border-t-white/10 border-r border-r-white/10 border-b border-b-white/10 flex justify-between items-center">
                             <div>
                                 <h5 class="text-white font-bold text-sm">Manutenção de Sites & Hospedagem</h5>
                                 <p class="text-xs text-gray-400">Backups semanais, atualizações de segurança e pequenas alterações.</p>
                             </div>
                             <span class="text-base font-bold text-[#ccff00]">R$ 150 - 250/mês</span>
                         </div>
-                        <div class="bg-[#06080c] p-4 rounded-xl border-l-2 border-l-[#ccff00] border-t border-t-white/10 border-r border-r-white/10 border-b border-b-white/10 flex justify-between items-center">
+                        <div class="bg-[#070a10] p-4 rounded-xl border-l-2 border-l-[#ccff00] border-t border-t-white/10 border-r border-r-white/10 border-b border-b-white/10 flex justify-between items-center">
                             <div>
                                 <h5 class="text-white font-bold text-sm">Suporte TI: Plano Básico (Até 5 PCs)</h5>
                                 <p class="text-xs text-gray-400">Atendimento remoto prioritário e visita preventiva mensal.</p>
                             </div>
                             <span class="text-base font-bold text-[#ccff00]">R$ 350 - 500/mês</span>
                         </div>
-                        <div class="bg-[#06080c] p-4 rounded-xl border-l-2 border-l-[#ccff00] border-t border-t-white/10 border-r border-r-white/10 border-b border-b-white/10 flex justify-between items-center">
+                        <div class="bg-[#070a10] p-4 rounded-xl border-l-2 border-l-[#ccff00] border-t border-t-white/10 border-r border-r-white/10 border-b border-b-white/10 flex justify-between items-center">
                             <div>
                                 <h5 class="text-white font-bold text-sm">Suporte TI: Plano Intermediário (6 a 12 PCs)</h5>
                                 <p class="text-xs text-gray-400">Gestão contínua de redes sem fio, roteadores e suporte ilimitado.</p>
@@ -1319,7 +1820,7 @@
                 title: "Solicitar Orçamento Avulso",
                 icon: `<svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>`,
                 content: `
-                    <p class="text-sm text-gray-300">Deseja um projeto específico? Clique no botão abaixo para conversar diretamente conosco via WhatsApp ou utilize o formulário rápido na seção de contato.</p>
+                    <p class="text-sm text-gray-300">Deseja um projeto específico? Clique no botão abaixo para conversar diretamente com nossos técnicos especializados via WhatsApp ou utilize o formulário rápido na seção de contato.</p>
                 `
             }
         };

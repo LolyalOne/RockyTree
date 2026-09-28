@@ -2,7 +2,7 @@
  * ============================================================================
  * TREEBOT IA 3.0 - ASSISTENTE VIRTUAL ROCKY TREE TECHNOLOGIES
  * ============================================================================
- * Design Tech Minimalist, Dark UI com acentos Neon.
+ * Design Tech Minimalist, interface moderna de alto contraste e acentos neon.
  * Suporte a Vercel Serverless Function (/api/chat) com sigilo total da chave Groq
  * e motor local inteligente com zero travamentos.
  * ============================================================================
@@ -12,14 +12,15 @@ const TREEBOT_CONFIG = {
     // Rota backend da Vercel Serverless Function (relativa para evitar problemas de CORS/domínio)
     API_ENDPOINT: window.ROCKY_TREE_CONFIG?.apiEndpoint || "/api/chat",
     WHATSAPP_NUMBER: "5575998729593",
-    FOUNDERS: "Ana Peixoto e Mikaell Rocha",
-    LOCATION: "Santo Antônio de Jesus - BA (Atendimento Presencial e 100% Remoto para todo o Brasil)"
+    TEAM: "Equipe de Técnicos Especializados",
+    LOCATION: "Santo Antônio de Jesus - BA (Foco principal em manutenção técnica presencial e suporte remoto para todo o Brasil)"
 };
 
 // Prompt de sistema base (utilizado quando conectado ao backend de IA)
 const TREEBOT_SYSTEM_PROMPT = `Você é o TreeBot 🌲, assistente virtual da Rocky Tree Technologies.
-Seu objetivo é ser simpático, direto ao ponto e técnico-minimalista. Esclareça dúvidas sobre os serviços da empresa com concisão (máximo 2 a 3 frases).
-Converse com naturalidade com o usuário. Só encaminhe ou sugira contato no WhatsApp quando for realmente necessário (ex: pedido de orçamento formal, intenção de fechar negócio ou solicitação de contato humano direto).`;
+Seu objetivo é ser simpático, direto ao ponto e usar linguagem clara e acessível, sem jargões complicados. Nossa equipe técnica especializada atua com foco prioritário em manutenção presencial de computadores e redes em Santo Antônio de Jesus (SAJ), além de criação de sites modernos para empresas e suporte remoto para todo o Brasil.
+Para sites e páginas para empresas, os valores são sob medida (A consultar); o plano de suporte e manutenção contínua de sites é de R$ 150 a R$ 250/mês.
+Esclareça dúvidas com concisão (máximo 2 a 3 frases). Só encaminhe para o WhatsApp com nossos técnicos especializados quando for realmente necessário (ex: orçamento formal ou atendimento direto).`;
 
 // Histórico de mensagens do chat
 let treebotMessages = [
@@ -30,34 +31,34 @@ let treebotWaiting = false;
 // Base de conhecimento local instantânea (Garante 100% de funcionamento offline/resiliente)
 const TREEBOT_KNOWLEDGE_BASE = [
     {
-        keywords: ["landing page", "site", "criar site", "pagina", "desenvolvimento web", "preco site", "quanto custa um site", "loja virtual", "one page"],
-        reply: "Desenvolvemos **Landing Pages de alta conversão** (entre **R$ 400 e R$ 800**, com 50% OFF de lançamento!) e **Sites Institucionais completos** (de **R$ 1.800 a R$ 2.800**). 🚀\n\nQual é o objetivo principal do seu novo projeto?"
+        keywords: ["landing page", "site", "criar site", "pagina", "desenvolvimento web", "preco site", "quanto custa um site", "loja virtual", "one page", "site institucional", "manutencao site", "manutencao web", "manutencao de site", "manutencao do site", "manutencao mensal do site", "suporte site", "suporte web", "suporte do site", "atualizacao de site"],
+        reply: "Desenvolvemos **Páginas de Apresentação Rápida** e **Sites Completos para sua Empresa** sob medida (**valores a consultar** conforme a sua necessidade). Também oferecemos **suporte e manutenção contínua** a partir de **R$ 150 a R$ 250/mês**. 🚀\n\nQual é o objetivo principal do seu novo projeto?"
     },
     {
-        keywords: ["suporte", "suporte ti", "redes", "servidor", "chamado", "manutencao", "plano mensal", "contrato ti", "ti para empresas"],
-        reply: "Oferecemos **Chamados Avulsos** (R$ 120 a R$ 180) e **Planos Mensais de Suporte de TI** a partir de **R$ 350/mês** para empresas, com SLA prioritário e gestão completa da infraestrutura. Você precisa de atendimento pontual ou mensal?"
+        keywords: ["suporte", "suporte ti", "redes", "servidor", "chamado", "manutencao", "plano mensal", "contrato ti", "ti para empresas", "saj", "santo antonio"],
+        reply: "Nosso foco principal em **Santo Antônio de Jesus (SAJ)** é o suporte presencial e manutenção técnica, além de atendimento remoto nacional. Oferecemos **Chamados Avulsos** (R$ 120 a R$ 180) e **Planos Mensais de TI** a partir de **R$ 350/mês**. Você precisa de atendimento pontual ou mensal?"
     },
     {
-        keywords: ["pc gamer", "hardware", "formatacao", "formatar", "limpeza", "pasta termica", "microsolda", "placa", "reparo", "montagem", "workstation"],
-        reply: "Fazemos montagem especializada de **PC Gamer e Workstations** (mão de obra R$ 200 a R$ 350), formatação limpa (R$ 100 a R$ 150), limpeza técnica com troca de pasta térmica e reparos em placas eletrônicas."
+        keywords: ["pc gamer", "hardware", "formatacao", "formatar", "limpeza", "pasta termica", "microsolda", "placa", "reparo", "montagem", "workstation", "manutencao em saj"],
+        reply: "Nossos técnicos realizam **manutenção especializada em Santo Antônio de Jesus (SAJ)** e região: conserto e montagem de computadores (mão de obra R$ 200 a R$ 350), formatação limpa (R$ 100 a R$ 150), limpeza técnica com troca de pasta térmica e reparos eletrônicos em placas."
     },
     {
         keywords: ["design", "logo", "logotipo", "identidade visual", "artes", "redes sociais", "branding", "marca", "manual da marca"],
         reply: "Criamos **Logotipos profissionais** (R$ 150 a R$ 200), **Identidade Visual completa** (R$ 200 a R$ 500) e pacotes mensais de artes para redes sociais a partir de R$ 150/mês. Você já tem uma ideia em mente?"
     },
     {
-        keywords: ["quem sao", "fundador", "fundadores", "donos", "criadores", "ana", "mikaell", "sobre", "historia"],
-        reply: "A Rocky Tree Technologies foi fundada por **Ana Peixoto** e **Mikaell Rocha**, especialistas em Redes, Infraestrutura e Desenvolvimento. Nosso foco é entregar soluções sólidas do hardware à nuvem."
+        keywords: ["quem sao", "fundador", "fundadores", "donos", "criadores", "equipe", "tecnicos", "sobre", "historia", "empresa"],
+        reply: "A Rocky Tree Technologies conta com uma **equipe técnica especializada** com ampla experiência em manutenção de hardware e infraestrutura em Santo Antônio de Jesus (SAJ), além de desenvolvimento web sob medida para clientes em todo o Brasil."
     },
     {
         keywords: ["onde ficam", "endereco", "cidade", "local", "santo antonio", "saj", "remoto", "presencial", "bahia"],
-        reply: "Nossa sede fica em **Santo Antônio de Jesus - BA**, onde realizamos atendimentos presenciais, e atendemos projetos de Desenvolvimento Web e Consultoria **100% de forma remota para todo o Brasil**."
+        reply: "Nossa sede fica em **Santo Antônio de Jesus - BA (SAJ)**, onde temos como foco principal a **manutenção técnica presencial e infraestrutura**, além de atendermos projetos de Desenvolvimento Web e suporte **100% de forma remota para todo o Brasil**."
     },
     {
         keywords: ["whatsapp", "zap", "whats", "contato", "telefone", "falar", "humano", "atendente", "orcamento", "cotacao", "fechar", "contratar", "agendar", "conversar"],
-        reply: "Com certeza! Para formalizar seu orçamento ou falar diretamente com a Ana Peixoto e o Mikaell Rocha, você pode nos chamar no WhatsApp:",
+        reply: "Com certeza! Para formalizar seu orçamento ou falar diretamente com nossos técnicos especializados, você pode nos chamar no WhatsApp:",
         directToWhatsApp: true,
-        cta: "Olá, equipe Rocky Tree! Estava conversando com o TreeBot e gostaria de solicitar um orçamento / agendar atendimento."
+        cta: "Olá, equipe técnica da Rocky Tree! Estava conversando com o TreeBot e gostaria de solicitar um orçamento / agendar atendimento."
     }
 ];
 
@@ -258,7 +259,7 @@ async function sendTreebotMessage(userText) {
         if (matchedItem) {
             aiReply = matchedItem.reply;
         } else {
-            aiReply = "Posso esclarecer suas dúvidas sobre **Desenvolvimento Web**, **Suporte de TI & Redes**, **Montagem/Reparo de Hardware** ou **Design Gráfico**. Como podemos te ajudar?";
+            aiReply = "Posso esclarecer suas dúvidas sobre **Criação de Sites para Empresas**, **Suporte de TI & Redes**, **Manutenção Técnica em SAJ** ou **Design & Identidade Visual**. Como podemos te ajudar?";
         }
     }
 
