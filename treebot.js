@@ -13,12 +13,12 @@ const TREEBOT_CONFIG = {
     API_ENDPOINT: window.ROCKY_TREE_CONFIG?.apiEndpoint || "/api/chat",
     WHATSAPP_NUMBER: "5575998729593",
     TEAM: "Equipe de Técnicos Especializados",
-    LOCATION: "Santo Antônio de Jesus - BA (Foco principal em manutenção técnica presencial e suporte remoto para todo o Brasil)"
+    LOCATION: "Santo Antônio de Jesus - BA (Atendimento presencial regional e suporte remoto para todo o Brasil)"
 };
 
 // Prompt de sistema base (utilizado quando conectado ao backend de IA)
-const TREEBOT_SYSTEM_PROMPT = `Você é o TreeBot 🌲, assistente virtual da Rocky Tree Technologies.
-Seu objetivo é ser simpático, direto ao ponto e usar linguagem clara e acessível, sem jargões complicados. Nossa equipe técnica especializada atua com foco prioritário em manutenção presencial de computadores e redes em Santo Antônio de Jesus (SAJ), além de criação de sites modernos para empresas e suporte remoto para todo o Brasil.
+const TREEBOT_SYSTEM_PROMPT = `Você é o TreeBot, assistente virtual da Rocky Tree Technologies.
+Seu objetivo é ser simpático, direto ao ponto e usar linguagem clara e acessível, sem jargões complicados. Nossa equipe técnica especializada atua com soluções completas de tecnologia: manutenção de hardware, infraestrutura corporativa de redes, desenvolvimento de sites modernos para empresas e suporte remoto para todo o Brasil (com atendimento presencial na região de Santo Antônio de Jesus - BA).
 Para sites e páginas para empresas, os valores são sob medida (A consultar); o plano de suporte e manutenção contínua de sites é de R$ 150 a R$ 250/mês.
 Esclareça dúvidas com concisão (máximo 2 a 3 frases). Só encaminhe para o WhatsApp com nossos técnicos especializados quando for realmente necessário (ex: orçamento formal ou atendimento direto).`;
 
@@ -32,15 +32,15 @@ let treebotWaiting = false;
 const TREEBOT_KNOWLEDGE_BASE = [
     {
         keywords: ["landing page", "site", "criar site", "pagina", "desenvolvimento web", "preco site", "quanto custa um site", "loja virtual", "one page", "site institucional", "manutencao site", "manutencao web", "manutencao de site", "manutencao do site", "manutencao mensal do site", "suporte site", "suporte web", "suporte do site", "atualizacao de site"],
-        reply: "Desenvolvemos **Páginas de Apresentação Rápida** e **Sites Completos para sua Empresa** sob medida (**valores a consultar** conforme a sua necessidade). Também oferecemos **suporte e manutenção contínua** a partir de **R$ 150 a R$ 250/mês**. 🚀\n\nQual é o objetivo principal do seu novo projeto?"
+        reply: "Desenvolvemos **Páginas de Apresentação Rápida** e **Sites Completos para sua Empresa** sob medida (**valores a consultar** conforme a sua necessidade). Também oferecemos **suporte e manutenção contínua** a partir de **R$ 150 a R$ 250/mês**.\n\nQual é o objetivo principal do seu novo projeto?"
     },
     {
         keywords: ["suporte", "suporte ti", "redes", "servidor", "chamado", "manutencao", "plano mensal", "contrato ti", "ti para empresas", "saj", "santo antonio"],
-        reply: "Nosso foco principal em **Santo Antônio de Jesus (SAJ)** é o suporte presencial e manutenção técnica, além de atendimento remoto nacional. Oferecemos **Chamados Avulsos** (R$ 120 a R$ 180) e **Planos Mensais de TI** a partir de **R$ 350/mês**. Você precisa de atendimento pontual ou mensal?"
+        reply: "Oferecemos atendimento técnico presencial na região de **Santo Antônio de Jesus (BA)** e suporte remoto corporativo para todo o país. Disponibilizamos **Chamados Avulsos** (R$ 120 a R$ 180) e **Planos Mensais de TI** a partir de **R$ 350/mês**. Você precisa de suporte pontual ou recorrente?"
     },
     {
         keywords: ["pc gamer", "hardware", "formatacao", "formatar", "limpeza", "pasta termica", "microsolda", "placa", "reparo", "montagem", "workstation", "manutencao em saj"],
-        reply: "Nossos técnicos realizam **manutenção especializada em Santo Antônio de Jesus (SAJ)** e região: conserto e montagem de computadores (mão de obra R$ 200 a R$ 350), formatação limpa (R$ 100 a R$ 150), limpeza técnica com troca de pasta térmica e reparos eletrônicos em placas."
+        reply: "Nossos técnicos realizam diagnósticos e **manutenção técnica de computadores e servidores**: montagem sob medida (mão de obra R$ 200 a R$ 350), formatação limpa (R$ 100 a R$ 150), limpeza técnica com troca de pasta térmica e reparos eletrônicos em placas com bancada em Santo Antônio de Jesus (BA) e consultoria remota."
     },
     {
         keywords: ["design", "logo", "logotipo", "identidade visual", "artes", "redes sociais", "branding", "marca", "manual da marca"],
@@ -48,11 +48,11 @@ const TREEBOT_KNOWLEDGE_BASE = [
     },
     {
         keywords: ["quem sao", "fundador", "fundadores", "donos", "criadores", "equipe", "tecnicos", "sobre", "historia", "empresa"],
-        reply: "A Rocky Tree Technologies conta com uma **equipe técnica especializada** com ampla experiência em manutenção de hardware e infraestrutura em Santo Antônio de Jesus (SAJ), além de desenvolvimento web sob medida para clientes em todo o Brasil."
+        reply: "A Rocky Tree Technologies conta com uma **equipe técnica especializada** com ampla experiência em infraestrutura corporativa, engenharia de hardware e desenvolvimento web moderno para empresas em todo o Brasil."
     },
     {
         keywords: ["onde ficam", "endereco", "cidade", "local", "santo antonio", "saj", "remoto", "presencial", "bahia"],
-        reply: "Nossa sede fica em **Santo Antônio de Jesus - BA (SAJ)**, onde temos como foco principal a **manutenção técnica presencial e infraestrutura**, além de atendermos projetos de Desenvolvimento Web e suporte **100% de forma remota para todo o Brasil**."
+        reply: "Nossa base operacional fica em **Santo Antônio de Jesus - BA**, onde realizamos **atendimento presencial regional e bancada técnica especializada**, além de projetos de Desenvolvimento Web e suporte técnico **100% remotos para todo o Brasil**."
     },
     {
         keywords: ["whatsapp", "zap", "whats", "contato", "telefone", "falar", "humano", "atendente", "orcamento", "cotacao", "fechar", "contratar", "agendar", "conversar"],
