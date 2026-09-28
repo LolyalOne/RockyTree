@@ -211,10 +211,13 @@
         .cursor {
             display: inline-block;
             width: 3px;
+            height: 0.88em;
             background-color: #ccff00;
-            margin-left: 4px;
+            margin-left: 5px;
             animation: blink 1s step-end infinite;
-            vertical-align: baseline;
+            vertical-align: -0.06em;
+            border-radius: 1px;
+            box-shadow: 0 0 10px #ccff00;
         }
 
         @keyframes blink {
@@ -234,6 +237,16 @@
             transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
+        .sim-checkbox-circle {
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .sim-checkbox-circle svg {
+            opacity: 0;
+            transform: scale(0.5);
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
         .sim-option.selected {
             border-color: #ccff00;
             background: rgba(204, 255, 0, 0.08);
@@ -245,6 +258,11 @@
             background-color: #ccff00;
             border-color: #ccff00;
             color: #070a10;
+        }
+
+        .sim-option.selected .sim-checkbox-circle svg {
+            opacity: 1;
+            transform: scale(1);
         }
 
         /* Interactive Portfolio Tabs */
@@ -413,8 +431,9 @@
             <!-- Main Title with Typing Effect -->
             <h1 class="font-display text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white mb-6 leading-[1.1] min-h-[1.2em]" data-aos="fade-up">
                 <span class="typing-container">
-                    <span id="typed-text" class="text-white"></span><span class="cursor">&nbsp;</span>
+                    <span id="typed-text" class="text-white"></span><span class="cursor" aria-hidden="true"></span>
                 </span>
+                <noscript>Soluções Sólidas em <span class="text-[#ccff00]">Tecnologia.</span></noscript>
             </h1>
             
             <!-- Minimalist & High-Impact Slogan -->
@@ -446,13 +465,13 @@
                     <div class="text-2xl font-display font-bold text-white mb-1">
                         Presencial & Remoto
                     </div>
-                    <p class="text-xs text-gray-400">Atendimento presencial em SAJ e região, com suporte remoto para todo o Brasil.</p>
+                    <p class="text-xs text-gray-400">Atendimento presencial regional e suporte remoto para todo o Brasil.</p>
                 </div>
                 <div class="p-3 text-left border-l border-white/5">
                     <div class="text-2xl font-display font-bold text-[#ccff00] mb-1">
                         Suporte Ágil
                     </div>
-                    <p class="text-xs text-gray-400">Atendimento remoto prioritário para empresas em todo o Brasil.</p>
+                    <p class="text-xs text-gray-400">Chamados pontuais ou suporte contínuo de TI para a sua operação.</p>
                 </div>
                 <div class="p-3 text-left border-l border-white/5">
                     <div class="text-2xl font-display font-bold text-white mb-1">
@@ -463,6 +482,8 @@
             </div>
         </div>
     </section>
+
+    <div class="neon-divider"></div>
 
     <!-- ========================================================================= -->
     <!-- SOBRE NÓS (Corpo Técnico Especializado & Atendimento)                     -->
@@ -644,7 +665,7 @@
                             Hardware & Manutenção Técnica
                         </h3>
                         <p class="text-gray-400 text-xs leading-relaxed mb-6">
-                            Diagnósticos avançados, conserto de computadores, notebooks e servidores corporativos. Atendimento presencial na região de SAJ, serviços de bancada e suporte preventivo.
+                            Diagnósticos avançados, conserto de computadores, notebooks e servidores corporativos. Atendimento presencial regional, serviços de bancada especializada e suporte preventivo.
                         </p>
                         <div class="flex flex-wrap gap-1.5 mb-6">
                             <span class="text-[10px] px-2.5 py-1 rounded bg-[#ccff00]/15 border border-[#ccff00]/30 text-[#ccff00] font-semibold service-tag">Manutenção Preventiva & Corretiva</span>
@@ -835,6 +856,7 @@
             <!-- Filtros Interativos do Portfólio -->
             <div class="flex flex-wrap gap-2 mb-10" data-aos="fade-up">
                 <button class="portfolio-tab active px-4 py-2 rounded-xl text-xs font-semibold border border-white/10 bg-white/5 text-gray-300 inline-flex items-center gap-2" onclick="filterPortfolio('all', this)">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path></svg>
                     <span>Todos os Projetos</span>
                 </button>
                 <button class="portfolio-tab px-4 py-2 rounded-xl text-xs font-semibold border border-white/10 bg-white/5 text-gray-300 inline-flex items-center gap-2" onclick="filterPortfolio('web', this)">
@@ -916,7 +938,7 @@
                     </div>
                 </div>
 
-                <!-- Projeto 3: Hardware (SAJ) -->
+                <!-- Projeto 3: Hardware & Bancada Especializada -->
                 <div class="portfolio-card tech-card rounded-2xl p-6 sm:p-8 flex flex-col justify-between group relative overflow-hidden" data-category="hardware" data-aos="fade-up" data-aos-delay="300">
                     <div>
                         <div class="flex items-center justify-between mb-6">
@@ -1108,7 +1130,7 @@
                         <h4 class="font-display font-bold text-white text-base">
                             Como funciona o atendimento presencial e o suporte remoto?
                         </h4>
-                        <span class="faq-chevron text-gray-400 transition-transform duration-300 text-lg font-bold">↓</span>
+                        <svg class="faq-chevron w-4 h-4 text-gray-400 transition-transform duration-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
                     </div>
                     <div class="faq-answer pt-3 text-sm text-gray-400 leading-relaxed">
                         Nossos técnicos realizam visitas presenciais e atendimento em bancada técnica para clientes e empresas em Santo Antônio de Jesus (BA) e região metropolitana, além de suporte remoto contínuo, consultoria em redes e desenvolvimento web para clientes em todo o Brasil.
@@ -1121,7 +1143,7 @@
                         <h4 class="font-display font-bold text-white text-base">
                             Não entendo nada de internet ou tecnologia. Vocês cuidam de tudo no site?
                         </h4>
-                        <span class="faq-chevron text-gray-400 transition-transform duration-300 text-lg font-bold">↓</span>
+                        <svg class="faq-chevron w-4 h-4 text-gray-400 transition-transform duration-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
                     </div>
                     <div class="faq-answer pt-3 text-sm text-gray-400 leading-relaxed">
                         Sim, 100%! Explicamos tudo em linguagem simples e cuidamos do registro do endereço da sua empresa, hospedagem segura, visual moderno, criação de textos e botão direto para o seu WhatsApp. Você não precisa se preocupar com detalhes técnicos.
@@ -1134,7 +1156,7 @@
                         <h4 class="font-display font-bold text-white text-base">
                             Qual a diferença entre uma Página Única e um Site Completo para Empresa?
                         </h4>
-                        <span class="faq-chevron text-gray-400 transition-transform duration-300 text-lg font-bold">↓</span>
+                        <svg class="faq-chevron w-4 h-4 text-gray-400 transition-transform duration-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
                     </div>
                     <div class="faq-answer pt-3 text-sm text-gray-400 leading-relaxed">
                         A Página Única apresenta seu negócio de forma direta em uma única tela contínua, ideal para campanhas e captação rápida de novos clientes no WhatsApp. Já o Site Completo possui páginas separadas (Quem Somos, Catálogo de Produtos, Serviços, Contato). Ambos são feitos sob medida com valores a consultar conforme a sua demanda.
@@ -1147,7 +1169,7 @@
                         <h4 class="font-display font-bold text-white text-base">
                             O que inclui a manutenção web mensal de R$ 150 a R$ 250/mês?
                         </h4>
-                        <span class="faq-chevron text-gray-400 transition-transform duration-300 text-lg font-bold">↓</span>
+                        <svg class="faq-chevron w-4 h-4 text-gray-400 transition-transform duration-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
                     </div>
                     <div class="faq-answer pt-3 text-sm text-gray-400 leading-relaxed">
                         Inclui hospedagem de alta velocidade, certificado de segurança (cadeado verde SSL), backups periódicos para proteger seus dados, pequenas alterações de textos, preços ou imagens e suporte técnico constante para garantir que seu site nunca fique fora do ar.
@@ -1160,7 +1182,7 @@
                         <h4 class="font-display font-bold text-white text-base">
                             Vocês atendem clientes e empresas fora de Santo Antônio de Jesus?
                         </h4>
-                        <span class="faq-chevron text-gray-400 transition-transform duration-300 text-lg font-bold">↓</span>
+                        <svg class="faq-chevron w-4 h-4 text-gray-400 transition-transform duration-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
                     </div>
                     <div class="faq-answer pt-3 text-sm text-gray-400 leading-relaxed">
                         Com certeza! Nossa bancada física de testes e reparos atende Santo Antônio de Jesus (BA) e cidades vizinhas, enquanto para projetos de desenvolvimento web, design de marcas e suporte técnico remoto, atendemos empresas em qualquer lugar do Brasil com agilidade e proximidade.
@@ -1673,7 +1695,7 @@
                         <div class="bg-[#070a10] p-4 rounded-xl border border-white/10 flex flex-col sm:flex-row justify-between sm:items-center gap-2">
                             <div>
                                 <h5 class="text-white font-bold text-sm">Chamado Técnico Avulso</h5>
-                                <p class="text-xs text-gray-400">Atendimento presencial em Santo Antônio de Jesus (SAJ) e cidades vizinhas ou suporte remoto nacional.</p>
+                                <p class="text-xs text-gray-400">Atendimento presencial regional (Santo Antônio de Jesus e região) ou suporte remoto para todo o Brasil.</p>
                             </div>
                             <div class="sm:text-right whitespace-nowrap">
                                 <span class="text-base font-bold text-[#ccff00]">R$ 120 <span class="text-xs font-normal text-gray-400">a</span> 180</span>
@@ -1850,6 +1872,7 @@
         const highlightWord = "Tecnologia.";
         const typeContainer = document.getElementById('typed-text');
         let typeIndex = 0;
+        let typewriterStarted = false;
 
         function typeWriter() {
             if (!typeContainer) return;
@@ -1870,7 +1893,18 @@
                 }
             }
         }
-        setTimeout(typeWriter, 350);
+
+        function initTypewriter() {
+            if (typewriterStarted) return;
+            typewriterStarted = true;
+            setTimeout(typeWriter, 250);
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initTypewriter);
+        } else {
+            initTypewriter();
+        }
     </script>
     <script src="./treebot.js"></script>
 </body>

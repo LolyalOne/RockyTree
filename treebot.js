@@ -259,7 +259,7 @@ async function sendTreebotMessage(userText) {
         if (matchedItem) {
             aiReply = matchedItem.reply;
         } else {
-            aiReply = "Posso esclarecer suas dúvidas sobre **Criação de Sites para Empresas**, **Suporte de TI & Redes**, **Manutenção Técnica em SAJ** ou **Design & Identidade Visual**. Como podemos te ajudar?";
+            aiReply = "Posso esclarecer suas dúvidas sobre **Criação de Sites para Empresas**, **Suporte de TI & Redes**, **Hardware & Manutenção Técnica** ou **Design & Identidade Visual**. Como podemos te ajudar?";
         }
     }
 
